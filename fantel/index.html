@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Коммерческое предложение — КФ «Фантэль» × Neat Studio</title>
+    <title>Fantel - коммерческое предложение по B2B-сайту</title>
+    <meta name="description" content="Аудит, конкурентный анализ, семантика и прототип нового B2B-сайта для КФ Фантэль." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -543,7 +544,7 @@ nav.top {
               display: grid !important;
               grid-template-columns: 1.3fr 1fr !important;
               gap: 24px !important;
-              align-items: stretch !important;
+              align-items: start !important;
               position: relative;
             }
 
@@ -579,14 +580,15 @@ nav.top {
               display: flex !important;
               flex-direction: column !important;
               gap: 0 !important;
-              overflow: hidden;
+              min-height: 540px !important;
+              overflow: visible !important;
             }
 
 .af-slides-wrap {
               position: relative !important;
-              flex: 1 !important;
-              min-height: 0 !important;
-              overflow: hidden;
+              flex: 1 1 auto !important;
+              min-height: 360px !important;
+              overflow: visible !important;
             }
             .aslide-fact {
               position: absolute !important;
@@ -595,6 +597,10 @@ nav.top {
               flex-direction: column !important;
               opacity: 0 !important;
               pointer-events: none;
+              padding: 4px 2px 8px !important;
+              box-sizing: border-box !important;
+              overflow-x: hidden !important;
+              overflow-y: auto !important;
             }
             .aslide-fact.active {
               opacity: 1 !important;
@@ -603,16 +609,19 @@ nav.top {
             .af-topic {
               font-size: 11px !important;
               font-weight: 700 !important;
-              letter-spacing: 0.18em !important;
+              letter-spacing: 0.14em !important;
               text-transform: uppercase !important;
               color: var(--blue-2) !important;
               margin-bottom: 16px;
+              line-height: 1.35 !important;
+              flex-shrink: 0 !important;
             }
             .af-stat {
               display: flex !important;
               flex-direction: column !important;
               gap: 0 !important;
               margin-bottom: 16px;
+              flex-shrink: 0 !important;
             }
             .af-num {
               font-family: "Manrope" !important;
@@ -633,14 +642,16 @@ nav.top {
               font-size: 14px !important;
               color: var(--muted) !important;
               line-height: 1.6 !important;
-              flex: 1 !important;
-              overflow: hidden;
+              flex: 1 1 auto !important;
+              overflow: visible !important;
+              min-height: 0 !important;
             }
             .af-substats {
               display: grid !important;
               grid-template-columns: 1fr 1fr !important;
               gap: 10px !important;
               margin-top: 16px;
+              flex-shrink: 0 !important;
             }
             .af-sub {
               background: #f7f9fc !important;
@@ -2854,62 +2865,79 @@ footer {
 
 <nav class="top">
       <div class="logo">
-        <img
-          src="media/logo/logo_neat.png"
-          alt="Neat Studio"
-        />
+        <img src="media/logo/logo_neat.png" alt="Neat Studio" />
       </div>
       <a class="nlink" href="#current">Аудит</a>
-      <a class="nlink" href="#improve">Решение</a>
-      <a class="nlink" href="#proposals">Пакеты</a>
-      <a class="nlink" href="#roadmap">Этапы</a>
-      <a class="cta" href="#contact">Начать</a>
+      <a class="nlink" href="#competitors">Конкуренты</a>
+      <a class="nlink" href="#semantics">Семантика</a>
+      <a class="nlink" href="#prototype">Прототип</a>
+      <a class="nlink" href="#docs">Документы</a>
+      <a class="cta" href="https://egoradonev.github.io/proposals/fantel/">Начать</a>
     </nav>
 
 <!-- ========== HERO ========== -->
-    <section class="hero">
+    <section class="hero" id="top">
       <div class="hero-grid"></div>
       <div class="container hero-inner">
         <div class="meta reveal">
           <div class="chip">
-            <span class="dot"></span>Коммерческое предложение · Май 2026
+            <span class="dot"></span>КФ «Фантэль» × Neat Studio
           </div>
           <div class="chip" style="gap: 14px; padding: 8px 16px">
             <img src="media/logo/logo-fantel-retina-748x476.png" alt="КФ «Фантэль»" style="height: 26px; width: auto; display: block">
             <span style="color: var(--muted); font-size: 14px; font-weight: 300">×</span>
-            <img
-              src="media/logo/logo_neat.png"
-              alt="Neat Studio"
-              style="height: 18px; width: auto; display: block"
-            />
+            <img src="media/logo/logo_neat.png" alt="Neat Studio" style="height: 18px; width: auto; display: block" />
           </div>
         </div>
         <h1>
-          Новый корпоративный сайт<br>
-          для&nbsp;кондитерской фабрики<br>
-          <span class="accent">КФ «Фантэль»</span>
+          Новый B2B-сайт для продаж тортов, пирожных и десертов<br>
+          <span class="accent">оптом</span>
         </h1>
         <p class="sub reveal">
-          Сайт, который превращает «Фантэль» из&nbsp;имиджевой витрины
-          в&nbsp;основной канал B2B-продаж: каталог из&nbsp;100+ SKU
-          с&nbsp;фасетным фильтром, лендинги для&nbsp;ритейла и&nbsp;HoReCa,
-          карта дилеров, видео производства и&nbsp;прямые кнопки
-          MAX&nbsp;/ Telegram&nbsp;/ WhatsApp на&nbsp;менеджера региона.
+          Текущий kf-fantel.com показывает фабрику, но не ведет закупщика к заявке.
+          Проект перестраивает сайт в коммерческий инструмент: каталог SKU, сегменты
+          сетей и HoReCa, прайс, документы качества, региональные посадочные и цели Метрики.
         </p>
         <div class="hero-ctas reveal">
-          <a class="btn btn-primary" href="#proposals"
-            >Смотреть предложения
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-            >
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
+          <a class="btn btn-primary" href="#prototype">Смотреть прототип
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn-ghost" href="#current">Что сейчас на&nbsp;kf-fantel.com</a>
+          <a class="btn btn-ghost" href="#semantics">Считать трафик</a>
+          <a class="btn btn-ghost" href="https://disk.yandex.com/i/P_chxBwuAGBVvA" target="_blank" rel="noopener">Открыть ТЗ</a>
+        </div>
+                  <figure class="reveal" style="margin:0;background:#fff;border-radius:16px;border:1px solid var(--line);box-shadow: var(--shadow-lg);overflow:hidden;">
+            <div style="display:flex;align-items:center;gap:8px;padding:12px 18px;background: var(--bg-2);border-bottom:1px solid var(--line);">
+              <span style="width:10px;height:10px;border-radius:50%;background:#ff6053;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#ffbc2e;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#28c93f;display:inline-block;"></span>
+              <span style="font-family: 'Courier New', monospace;font-size:12px;color: var(--muted);margin-left:14px;">kf-fantel.com</span>
+              <span style="margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color: var(--blue-2);">Главная · первый экран</span>
+            </div>
+            <img src="media/future-website/desktop-01-hero.png" alt="Первый экран прототипа Fantel с B2B-позиционированием" loading="lazy" style="display:block;width:100%;height:auto;" />
+          </figure>
+      </div>
+    </section>
+
+<!-- ========== STATS ========== -->
+    <section class="section-sm" style="padding-top: 0; padding-bottom: 80px">
+      <div class="container">
+        <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+          <div style="background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);box-shadow: var(--shadow-lg)">
+            <div style="font-family:Manrope,sans-serif;font-size:40px;font-weight:900;color:var(--ink);line-height:1;margin-bottom:8px">2008</div>
+            <div style="font-size:13px;color:var(--ink-soft);line-height:1.5">история производства Fantel</div>
+          </div>
+          <div style="background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);box-shadow: var(--shadow-lg)">
+            <div style="font-family:Manrope,sans-serif;font-size:40px;font-weight:900;color:var(--ink);line-height:1;margin-bottom:8px">+4/-18</div>
+            <div style="font-size:13px;color:var(--ink-soft);line-height:1.5">температурные режимы логистики</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#e8f4fb 0%,#d4e8f5 100%);border-radius:16px;padding:26px;border:1px solid var(--blue-2);box-shadow: var(--shadow-lg)">
+            <div style="font-family:Manrope,sans-serif;font-size:40px;font-weight:900;color:var(--blue-2);line-height:1;margin-bottom:8px">30</div>
+            <div style="font-size:13px;color:var(--ink);line-height:1.5;font-weight:600">B2B-запросов проверены в Wordstat</div>
+          </div>
+          <div style="background:var(--ink);border-radius:16px;padding:26px;box-shadow: var(--shadow-xl)">
+            <div style="font-family:Manrope,sans-serif;font-size:40px;font-weight:900;color:#fff;line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums">92 870</div>
+            <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.5">показов РФ в месяц по целевой семантике</div>
+          </div>
         </div>
       </div>
     </section>
@@ -2923,18 +2951,15 @@ footer {
             <h2>Что сейчас на&nbsp;kf-fantel.com</h2>
           </div>
           <div class="r reveal">
-            Сайт работает как имиджевая витрина. Раздел «Партнёрам»
-            обслуживает поставщиков сырья, а&nbsp;не&nbsp;дилеров и&nbsp;сети.
-            Каталог из&nbsp;100+ SKU&nbsp;— без&nbsp;описаний, фасовок
-            и&nbsp;фильтров. Критические SEO-ошибки на&nbsp;всех страницах.
+            Сайт работает как корпоративная визитка и&nbsp;электронный каталог.
+            Как B2B-инструмент продаж недоработан: нет посадочных под&nbsp;сегменты,
+            понятных условий сотрудничества, доказательств качества и&nbsp;SEO-структуры.
+            Аудит от&nbsp;20.05.2026.
           </div>
         </div>
 
-<!-- ——— Audit Slider ——— -->
         <div class="audit-slider reveal" id="auditSlider">
-          <!-- LEFT: mock browser with swappable screenshots -->
           <div class="audit-mock-panel" id="auditMockPanel">
-            <!-- slide 0: главная -->
             <div class="aslide-img active" data-slide="0">
               <div class="mock-bar">
                 <div class="dots"><span></span><span></span><span></span></div>
@@ -2943,11 +2968,10 @@ footer {
               <div class="mock-body">
                 <img src="media/current-website/audit-01-home.png" alt="Главная страница kf-fantel.com" loading="lazy" />
               </div>
-              <div class="issue-pin p1"><span class="ip-dot">!</span>Hero статичный&nbsp;— нет анимаций и&nbsp;УТП</div>
-              <div class="issue-pin p3"><span class="ip-dot">!</span>Нет блока ключевых цифр (SKU, годы, награды) на&nbsp;первом экране</div>
-
+              <div class="issue-pin p1"><span class="ip-dot">!</span>Основной CTA&nbsp;— «Подробнее», нет&nbsp;«Получить каталог» / «Запросить прайс»</div>
+              <div class="issue-pin p2"><span class="ip-dot">!</span>Первый экран перегружен текстом&nbsp;— нет&nbsp;3–4 коротких B2B-УТП</div>
+              <div class="issue-pin p3"><span class="ip-dot">!</span>Телефон в&nbsp;шапке ведёт как URL, а&nbsp;не&nbsp;tel-ссылка</div>
             </div>
-            <!-- slide 1: каталог продукции -->
             <div class="aslide-img" data-slide="1">
               <div class="mock-bar">
                 <div class="dots"><span></span><span></span><span></span></div>
@@ -2956,10 +2980,10 @@ footer {
               <div class="mock-body">
                 <img src="media/current-website/audit-02-catalog.png" alt="Каталог kf-fantel.com" loading="lazy" />
               </div>
-              <div class="issue-pin p1"><span class="ip-dot">!</span>Карточки SKU без&nbsp;описаний и&nbsp;спецификаций</div>
-              <div class="issue-pin p2"><span class="ip-dot">!</span>Нет фасетного фильтра&nbsp;— по&nbsp;весу, фасовке, сроку</div>
+              <div class="issue-pin p1"><span class="ip-dot">!</span>Нет&nbsp;фильтров: вес, срок годности, t° хранения, упаковка</div>
+              <div class="issue-pin p2"><span class="ip-dot">!</span>Нет&nbsp;скачиваемого PDF/Excel-каталога в&nbsp;первом сценарии</div>
+              <div class="issue-pin p3"><span class="ip-dot">!</span>Карточки без&nbsp;характеристик, условий хранения и&nbsp;преимуществ</div>
             </div>
-            <!-- slide 2: О компании -->
             <div class="aslide-img" data-slide="2">
               <div class="mock-bar">
                 <div class="dots"><span></span><span></span><span></span></div>
@@ -2968,10 +2992,10 @@ footer {
               <div class="mock-body">
                 <img src="media/current-website/audit-03-about.png" alt="Блок «О нас» kf-fantel.com" loading="lazy" />
               </div>
-              <div class="issue-pin p1"><span class="ip-dot">!</span>Title страницы&nbsp;— «Фотогалерея», конфликт с&nbsp;контентом</div>
-              <div class="issue-pin p2"><span class="ip-dot">!</span>Нет ISO/HACCP-плашек, цифр производства, видео цеха по клику, без автовоспроизведения</div>
+              <div class="issue-pin p1"><span class="ip-dot">!</span>Title страницы&nbsp;— «Фотогалерея», не&nbsp;соответствует контенту</div>
+              <div class="issue-pin p2"><span class="ip-dot">!</span>Нет&nbsp;публичного блока сертификатов и&nbsp;документов качества</div>
+              <div class="issue-pin p3"><span class="ip-dot">!</span>Награды WorldFood и&nbsp;Продэкспо без&nbsp;сканов и&nbsp;доказательств</div>
             </div>
-            <!-- slide 3: Партнёрам -->
             <div class="aslide-img" data-slide="3">
               <div class="mock-bar">
                 <div class="dots"><span></span><span></span><span></span></div>
@@ -2981,51 +3005,46 @@ footer {
                 <img src="media/current-website/audit-04-partner.png" alt="Партнёрам kf-fantel.com" loading="lazy" />
               </div>
               <div class="issue-pin p1"><span class="ip-dot">!</span>Опечатка в&nbsp;title&nbsp;— «Парнтнерам»</div>
-              <div class="issue-pin p2"><span class="ip-dot">!</span>Раздел для&nbsp;поставщиков сырья, а&nbsp;не&nbsp;дилеров</div>
+              <div class="issue-pin p2"><span class="ip-dot">!</span>Раздел для&nbsp;поставщиков сырья, а&nbsp;не&nbsp;покупателей продукции</div>
+              <div class="issue-pin p3"><span class="ip-dot">!</span>Универсальная форма&nbsp;— нет&nbsp;типа клиента, города, объёма, ИНН</div>
             </div>
           </div>
 
-<!-- RIGHT: facts panel -->
           <div class="audit-facts-panel">
             <div class="af-slides-wrap">
-              <!-- fact 0: главная -->
               <div class="aslide-fact active" data-slide="0">
                 <div class="af-topic">Главная и&nbsp;структура</div>
                 <div class="af-stat">
                   <div class="af-num">0</div>
-                  <div class="af-unit">блоков УТП и&nbsp;цифр на&nbsp;первом экране</div>
+                  <div class="af-unit">отдельных B2B-посадочных под&nbsp;сегменты</div>
                 </div>
                 <p class="af-desc">
-                  Главный экран не&nbsp;транслирует ключевые УТП: 2008&nbsp;год,
-                  собственная лаборатория, спец.транспорт &minus;18&deg;C,
-                  награды World Food и&nbsp;Продэкспо. Карта поставок есть
-                  на&nbsp;странице &laquo;О компании&raquo;, но&nbsp;без&nbsp;меток
-                  конкретных дилеров и&nbsp;точек продаж.
+                  Нет&nbsp;страниц под&nbsp;сети, дистрибьюторов, HoReCa, кофейни, отели, АЗС.
+                  Главная не&nbsp;ведёт к&nbsp;коммерческому действию: нет&nbsp;заявок на&nbsp;прайс,
+                  дегустацию, КП и&nbsp;подбор матрицы. Телефон в&nbsp;шапке размечен некорректно.
                 </p>
                 <div class="af-substats">
                   <div class="af-sub">
                     <div class="s-num">0</div>
-                    <div class="s-lbl">анимаций / интерактивов</div>
+                    <div class="s-lbl">CTA «каталог / прайс / партнёр»</div>
                   </div>
                   <div class="af-sub">
                     <div class="s-num">0</div>
-                    <div class="s-lbl">блок цифр / преимуществ</div>
+                    <div class="s-lbl">посадочных под&nbsp;Директ</div>
                   </div>
                 </div>
               </div>
-
-              <!-- fact 1: каталог -->
               <div class="aslide-fact" data-slide="1">
                 <div class="af-topic">Каталог и&nbsp;карточка SKU</div>
                 <div class="af-stat">
                   <div class="af-num">100+</div>
-                  <div class="af-unit">SKU&nbsp;— без&nbsp;спецификаций и&nbsp;фильтров</div>
+                  <div class="af-unit">SKU&nbsp;— без&nbsp;закупочных фильтров</div>
                 </div>
                 <p class="af-desc">
-                  Около 100 наименований в&nbsp;двух линейках (Fantel и&nbsp;ПБК),
-                  но&nbsp;карточка содержит только название и&nbsp;вес.
-                  Нет состава, фасовки, BBE, PDF-спецификации.
-                  Закупщик сети не&nbsp;может оценить ассортимент.
+                  Каталог не&nbsp;работает как продающий B2B-инструмент: нет&nbsp;фильтров по&nbsp;весу,
+                  сроку годности, температуре, упаковке и&nbsp;категории клиента.
+                  Не&nbsp;выявлен заметный PDF/Excel-каталог. Мало уникальных описаний
+                  и&nbsp;коммерческих характеристик для&nbsp;закупщика.
                 </p>
                 <div class="af-substats">
                   <div class="af-sub">
@@ -3034,74 +3053,61 @@ footer {
                   </div>
                   <div class="af-sub">
                     <div class="s-num">0</div>
-                    <div class="s-lbl">PDF-спецификаций</div>
+                    <div class="s-lbl">PDF/Excel в&nbsp;сценарии</div>
                   </div>
                 </div>
               </div>
-
-              <!-- fact 2: О компании -->
               <div class="aslide-fact" data-slide="2">
                 <div class="af-topic">Контент и&nbsp;доверие</div>
                 <div class="af-stat">
                   <div class="af-num">0</div>
-                  <div class="af-unit">сертификатов ISO/HACCP/ГОСТ на&nbsp;сайте</div>
+                  <div class="af-unit">публичных сертификатов на&nbsp;сайте</div>
                 </div>
                 <p class="af-desc">
-                  Аргументы качества для&nbsp;переговоров с&nbsp;федеральным
-                  ритейлом не&nbsp;размещены: нет сертификатов, нет видео
-                  производства (есть в&nbsp;активах, но&nbsp;не&nbsp;использовано),
-                  нет цифр производства, нет кейсов сетевых партнёров.
+                  Нет&nbsp;деклараций, ХАССП/FSSC/ISO, условий хранения.
+                  Транспорт +4/−18&nbsp;°C, лаборатория и&nbsp;склады не&nbsp;оформлены
+                  как доказательные блоки с&nbsp;цифрами. Нет&nbsp;логотипов сетей,
+                  дистрибьюторов и&nbsp;кейсов. География&nbsp;— сырой список без&nbsp;карты.
                 </p>
                 <div class="af-substats">
                   <div class="af-sub">
                     <div class="s-num">0</div>
-                    <div class="s-lbl">видео производства</div>
+                    <div class="s-lbl">кейсов партнёров</div>
                   </div>
                   <div class="af-sub">
                     <div class="s-num">0</div>
-                    <div class="s-lbl">опубликованных кейсов</div>
+                    <div class="s-lbl">сканов наград</div>
                   </div>
                 </div>
               </div>
-
-              <!-- fact 3: Партнёрам и SEO -->
               <div class="aslide-fact" data-slide="3">
                 <div class="af-topic">B2B-разрыв и&nbsp;SEO</div>
                 <div class="af-stat">
-                  <div class="af-num">2</div>
-                  <div class="af-unit">ошибки в&nbsp;title и&nbsp;0 alt на&nbsp;50+ картинках</div>
+                  <div class="af-num">50+</div>
+                  <div class="af-unit">изображений без&nbsp;alt + ошибки в&nbsp;title</div>
                 </div>
                 <p class="af-desc">
-                  Раздел &laquo;Партнёрам&raquo; обслуживает поставщиков сырья,
-                  а&nbsp;не&nbsp;дилеров. Опечатка &laquo;Парнтнерам&raquo;
-                  в&nbsp;title, конфликт &laquo;Фотогалерея&raquo; на&nbsp;/about-us,
-                  нет H1, нет meta description, нет alt-тегов&nbsp;— SEO теряет видимость.
+                  На&nbsp;ключевых страницах нет&nbsp;корректных H1 и&nbsp;meta description.
+                  «О&nbsp;нас»&nbsp;— title «Фотогалерея», «Партнёрам»&nbsp;— опечатка «Парнтнерам».
+                  Битые URL категорий /catalog/harizma/ и&nbsp;/catalog/food-service/.
+                  Нет&nbsp;микроразметки Organization, Product, FAQ, BreadcrumbList.
                 </p>
                 <div class="af-substats">
                   <div class="af-sub">
                     <div class="s-num">0</div>
-                    <div class="s-lbl">B2B-форм для&nbsp;дилеров</div>
+                    <div class="s-lbl">Schema.org</div>
                   </div>
                   <div class="af-sub">
                     <div class="s-num">0</div>
-                    <div class="s-lbl">микроразметка Schema.org</div>
+                    <div class="s-lbl">целей Метрики на&nbsp;формы</div>
                   </div>
                 </div>
               </div>
-
             </div>
-            <!-- /af-slides-wrap -->
 
-<!-- navigation -->
             <div class="audit-nav">
               <button class="an-btn" id="auditPrev" aria-label="Назад">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke-width="2.2"
-                >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.2">
                   <path d="M19 12H5M11 6l-6 6 6 6" />
                 </svg>
               </button>
@@ -3112,29 +3118,16 @@ footer {
                 <button class="an-dot" data-n="3"></button>
               </div>
               <button class="an-btn" id="auditNext" aria-label="Вперёд">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke-width="2.2"
-                >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.2">
                   <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
               </button>
             </div>
 
-<!-- doc link -->
-            <a class="audit-link" href="https://cloud.mail.ru/public/Qd2S/uEDQqvy9J/%D0%90%D1%83%D0%B4%D0%B8%D1%82-%D1%81%D0%B0%D0%B9%D1%82%D0%B0_kf-fantel.com.docx?weblink=Qd2S/uEDQqvy9J/%D0%90%D1%83%D0%B4%D0%B8%D1%82-%D1%81%D0%B0%D0%B9%D1%82%D0%B0_kf-fantel.com.docx" target="_blank" rel="noopener"><div><h4>Полный аудит · DOCX</h4>
-                <p>Все точки роста · UX, контент, SEO, B2B-функции</p>
-              </div>
-              <div class="go">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </div>
-            </a>
-            <a class="audit-link" href="https://cloud.mail.ru/public/Qd2S/uEDQqvy9J/%D0%A2%D0%97_%D0%A4%D0%B0%D0%BD%D1%82%D1%8D%D0%BB%D1%8C.docx?weblink=Qd2S/uEDQqvy9J/%D0%A2%D0%97_%D0%A4%D0%B0%D0%BD%D1%82%D1%8D%D0%BB%D1%8C.docx" target="_blank" rel="noopener" style="margin-top:10px!important"><div><h4>Техническое задание · DOCX</h4><p>Структура, стек, функционал — полная документация</p>
+            <a class="audit-link" href="https://disk.yandex.com/i/wm5Tx5uzHsDgbg" target="_blank" rel="noopener">
+              <div>
+                <h4>Полный аудит · DOCX</h4>
+                <p>Все точки роста · UX, контент, SEO, B2B, Директ · 20.05.2026</p>
               </div>
               <div class="go">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4">
@@ -3147,1310 +3140,506 @@ footer {
       </div>
     </section>
 
-
-<!-- ========== COMPETITIVE ANALYSIS ========== -->
-    <section class="section" id="competitive" style="background: var(--bg-2); padding-top: 80px; padding-bottom: 80px">
+<!-- ========== COMPETITORS ========== -->
+    <section class="section" id="competitors" style="background: var(--bg-2); padding-top: 80px; padding-bottom: 80px">
       <div class="container">
         <div class="s-head" style="margin-bottom: 40px">
           <div class="l reveal">
-            <span class="eyebrow">01.5 · Конкурентный анализ</span>
-            <h2>Что уже есть у&nbsp;конкурентов</h2>
+            <span class="eyebrow">02 · конкурентный анализ</span>
+            <h2>Лидеры рынка продают масштаб, качество и&nbsp;понятный вход в&nbsp;сотрудничество</h2>
           </div>
           <div class="r reveal" style="max-width: 460px; color: var(--ink-soft); font-size: 15px; line-height: 1.6">
-            Сравнение сайтов конкурентов&nbsp;— только то,
-            что реализовано на&nbsp;их&nbsp;страницах. Ниже&nbsp;— функции
-            и&nbsp;разделы, которых нет на&nbsp;kf-fantel.com.
+            Hlebprom, Черемушки, Metropolis, Benje, Marzipani и Сладонеж сильнее показывают
+            цифры, качество, B2B-посадочные, прайс и партнерские сценарии.
           </div>
         </div>
-
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 32px">
-          <div class="reveal" style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--line); box-shadow: var(--shadow-lg)">
-            <div style="font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--blue-2); text-transform:uppercase; margin-bottom:10px">Региональный сосед</div>
-            <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:8px">Хлебпром / Mirel · hlebprom.ru</div>
-            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5px">
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>4 ISO + HACCP + OHSAS&nbsp;— публично на&nbsp;сайте</li>
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Карта представительств в&nbsp;24 городах РФ</li>
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>RU/EN, корпоративное видео на&nbsp;главной</li>
-            </ul>
-          </div>
-          <div class="reveal" style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--line); box-shadow: var(--shadow-lg)">
-            <div style="font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--blue-2); text-transform:uppercase; margin-bottom:10px">B2B-портал</div>
-            <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:8px">КБК «Черёмушки» · moskbk.com</div>
-            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5px">
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Отдельный поддомен icp.moskbk.com&nbsp;— кабинет дилера</li>
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>FSSC 22000 + ISO 22000 + HACCP</li>
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Параллельный B2C-магазин cheremushki.shop</li>
-            </ul>
-          </div>
-          <div class="reveal" style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--line); box-shadow: var(--shadow-lg)">
-            <div style="font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--blue-2); text-transform:uppercase; margin-bottom:10px">B2C + ритейл</div>
-            <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:8px">У Палыча · palich.ru</div>
-            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5px">
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Интерактивная карта точек продаж на&nbsp;Я.Картах</li>
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Приложения iOS/Android, страница программы лояльности</li>
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Региональные поддомены с&nbsp;локальным ассортиментом</li>
-            </ul>
-          </div>
-          <div class="reveal" style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--line); box-shadow: var(--shadow-lg)">
-            <div style="font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--blue-2); text-transform:uppercase; margin-bottom:10px">Региональный лидер</div>
-            <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:8px">Невские берега · cake.spb.ru</div>
-            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5px">
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Отдельный B2C-ИМ на&nbsp;поддомене cake-shop.spb.ru</li>
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Раздел «Партнёрам» с&nbsp;программой франшизы</li>
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Новости и&nbsp;отзывы на&nbsp;главной</li>
-            </ul>
-          </div>
-          <div class="reveal" style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--line); box-shadow: var(--shadow-lg)">
-            <div style="font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--blue-2); text-transform:uppercase; margin-bottom:10px">Федеральный холдинг</div>
-            <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:8px">КФ им. К. Самойловой · uniconf.ru</div>
-            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5px">
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Страница «Качество» с&nbsp;ISO 22000 + ГОСТ Р + HACCP</li>
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Страница «Музей и&nbsp;экскурсии» с&nbsp;фотогалереей</li>
-              <li style="font-size:12px; color:var(--ink-soft); display:flex; gap:7px"><span style="color:var(--blue-2); flex-shrink:0">→</span>Раздел «Оптовым покупателям», RU/EN</li>
-            </ul>
-          </div>
-          <div class="reveal" style="background: var(--ink); border-radius:16px; padding:24px; box-shadow: var(--shadow-xl); display:flex; flex-direction:column; justify-content:center">
-            <div style="font-size:28px; font-weight:900; color:#fff; line-height:1.1; margin-bottom:12px">7<span style="color:var(--cyan)"> сайтов</span><br>в 5 типах решений</div>
-            <p style="font-size:12px; color:rgba(255,255,255,0.6); line-height:1.6; margin:0">Также проверены сайты: Сладонеж, Север-Метрополь. Полная gap-матрица — в DOCX.</p>
-          </div>
+        <div class="cmp-wrap reveal">
+          <table class="cmp-table">
+            <thead>
+              <tr>
+                <th>Паттерн лидеров</th>
+                <th>Кто использует</th>
+                <th>Что получает Fantel после внедрения</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Числовое УТП и масштаб</td><td>Хлебпром, Черемушки, Сладонеж</td><td>Быстрое считывание надежности: годы, SKU, регионы, мощность, автопарк.</td></tr>
+              <tr><td>Качество и сертификация</td><td>Хлебпром, Черемушки</td><td>Снижение риска закупщика через документы, лабораторию и холодовую цепь.</td></tr>
+              <tr><td>B2B-посадочные под спрос</td><td>Benje, Marzipani, Metropolis</td><td>Реклама ведет не на общую главную, а на торты оптом, HoReCa, дистрибуцию.</td></tr>
+              <tr><td>Прайс и каталог как лид-магнит</td><td>Benje, Marzipani, Metropolis</td><td>Контакт закупщика собирается до звонка, менеджер получает сегмент и интерес.</td></tr>
+            </tbody>
+          </table>
         </div>
-
-        <a class="audit-link reveal" href="https://cloud.mail.ru/public/Qd2S/uEDQqvy9J/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D0%A4%D0%B0%D0%BD%D1%82%D1%8D%D0%BB%D1%8C.docx?weblink=Qd2S/uEDQqvy9J/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D0%A4%D0%B0%D0%BD%D1%82%D1%8D%D0%BB%D1%8C.docx" target="_blank" rel="noopener">
-          <div>
-            <h4>Конкурентный анализ · DOCX</h4>
-            <p>7 конкурентов · 4 сегмента · gap-матрица 14×9 · рекомендации</p>
-          </div>
-          <div class="go">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </div>
-        </a>
       </div>
     </section>
 
-<!-- ========== WORDSTAT / LOST LEADS ========== -->
-    <section class="section" id="wordstat" style="padding-top: 80px; padding-bottom: 80px">
+<!-- ========== DIRECT ========== -->
+    <section class="section" id="direct">
+      <div class="container">
+        <div class="s-head">
+          <div class="l reveal">
+            <span class="eyebrow">03 · Яндекс Директ</span>
+            <h2>Перед рекламой нужны посадочные под&nbsp;интент, иначе бюджет уйдет в&nbsp;общую главную</h2>
+          </div>
+          <div class="r reveal">
+            Рекламная структура из документа: бренд, оптовые торты, оптовые пирожные, HoReCa,
+            поставщик, регионы и отдельная HR-кампания.
+          </div>
+        </div>
+        <div class="imp-features" style="margin-top: 0">
+          <div class="imp-card reveal">
+            <div class="ic-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <h4>Высокий приоритет</h4>
+            <p>Торты оптом, пирожные оптом, замороженные десерты, поставщик десертов, HoReCa.</p>
+          </div>
+          <div class="imp-card reveal">
+            <div class="ic-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+            <h4>Нужные формы</h4>
+            <p>Получить каталог, запросить прайс, заявка сети, заявка HoReCa, стать дистрибьютором.</p>
+          </div>
+          <div class="imp-card reveal">
+            <div class="ic-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <h4>Трекинг</h4>
+            <p>UTM, yclid, цели Метрики, клики tel/mail/messenger, скачивание каталога, CRM-дубли.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- ========== WORDSTAT ========== -->
+    <section class="section" id="semantics" style="padding-top: 80px; padding-bottom: 80px">
       <div class="container">
         <div class="s-head" style="margin-bottom: 40px">
           <div class="l reveal">
-            <span class="eyebrow">01.7 · Семантика и&nbsp;недополученный трафик</span>
-            <h2>Сколько лидов теряет kf-fantel.com<br>на&nbsp;поисковом спросе</h2>
+            <span class="eyebrow">04 · семантика и&nbsp;недополученный трафик</span>
+            <h2>30 ключевых запросов дают измеримый потенциал заявок</h2>
           </div>
           <div class="r reveal" style="max-width: 460px; color: var(--ink-soft); font-size: 15px; line-height: 1.6">
-            Проверили 30 ключевых запросов B2B и&nbsp;категорийной семантики по&nbsp;направлениям:
-            производитель тортов оптом, бисквитные торты длительного
-            хранения, HoReCa-десерты, региональная дистрибуция.
-            Данные Яндекс&nbsp;Wordstat за&nbsp;последние 30 дней
-            (на&nbsp;14.05.2026). Срезы&nbsp;— РФ и&nbsp;Челябинская
-            область.
+            Проверены B2B и категорийные направления: производитель тортов оптом, бисквитные
+            торты длительного хранения, HoReCa-десерты, региональная дистрибуция.
+            Данные Яндекс Wordstat за последние 30 дней на 21.05.2026. Срезы — РФ и Челябинская область.
           </div>
         </div>
-
-        <!-- Таблица запросов -->
-        <div class="reveal" style="background:#fff; border-radius:20px; border:1px solid var(--line); box-shadow: var(--shadow-lg); overflow:hidden; margin-bottom: 24px">
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; background: var(--ink); color:#fff; padding:16px 24px; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase">
+        <div class="reveal" id="semantic-table" style="background:#fff;border-radius:20px;border:1px solid var(--line);box-shadow: var(--shadow-lg);overflow:hidden;margin-bottom: 24px">
+          <div style="display:grid;grid-template-columns:50px 1fr 140px 140px 140px;background:var(--ink);color:#fff;padding:16px 24px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">
             <div>№</div>
             <div>Запрос</div>
             <div style="text-align:right">Показов/мес (РФ)</div>
             <div style="text-align:right">Показов/мес (Челябинск)</div>
             <div style="text-align:right">Потенц. заявок (РФ)</div>
           </div>
-          <!-- Строки: 30 B2B и категорийных запросов -->
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">01</div>
-            <div style="color:var(--ink); font-weight:600">производитель тортов оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">2 480</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">52</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~1,5</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">02</div>
-            <div style="color:var(--ink); font-weight:600">бисквитные торты оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">1 210</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">24</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,7</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">03</div>
-            <div style="color:var(--ink); font-weight:600">торты в нарезке оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">790</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">14</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,5</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">04</div>
-            <div style="color:var(--ink); font-weight:600">пирожные оптом производитель</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">1 485</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">31</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,9</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">05</div>
-            <div style="color:var(--ink); font-weight:600">торты для HoReCa</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">615</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">11</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,4</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">06</div>
-            <div style="color:var(--ink); font-weight:600">торт длительного хранения</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">3 520</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">81</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~2,1</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">07</div>
-            <div style="color:var(--ink); font-weight:600">торт замороженный оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">905</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">19</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,5</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">08</div>
-            <div style="color:var(--ink); font-weight:600">торты на заказ для кафе</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">2 210</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">58</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~1,3</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">09</div>
-            <div style="color:var(--ink); font-weight:600">эстерхази торт оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">460</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">12</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,3</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">10</div>
-            <div style="color:var(--ink); font-weight:600">прага торт производитель</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">720</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">18</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,4</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">11</div>
-            <div style="color:var(--ink); font-weight:600">торт чёрный принц оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">350</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">9</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,2</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">12</div>
-            <div style="color:var(--ink); font-weight:600">киевский торт оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">1 095</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">22</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,7</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">13</div>
-            <div style="color:var(--ink); font-weight:600">производитель пирожных Челябинск</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">245</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">118</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,1</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">14</div>
-            <div style="color:var(--ink); font-weight:600">торты Челябинск оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">175</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">142</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,1</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">15</div>
-            <div style="color:var(--ink); font-weight:600">дистрибьюция кондитерских изделий</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">410</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">12</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,2</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">16</div>
-            <div style="color:var(--ink); font-weight:600">фабрика тортов Россия</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">1 780</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">36</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~1,1</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">17</div>
-            <div style="color:var(--ink); font-weight:600">торты оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">12 480</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">152</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~7,5</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">18</div>
-            <div style="color:var(--ink); font-weight:600">купить торты оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">5 215</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">86</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~3,1</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">19</div>
-            <div style="color:var(--ink); font-weight:600">кондитерская фабрика</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">28 430</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">432</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~17,1</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">20</div>
-            <div style="color:var(--ink); font-weight:600">производитель кондитерских изделий</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">3 820</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">45</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~2,3</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">21</div>
-            <div style="color:var(--ink); font-weight:600">поставщик тортов</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">2 110</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">28</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~1,3</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">22</div>
-            <div style="color:var(--ink); font-weight:600">торты от производителя</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">6 720</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">78</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~4,0</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">23</div>
-            <div style="color:var(--ink); font-weight:600">торт медовик производитель</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">1 850</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">22</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~1,1</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">24</div>
-            <div style="color:var(--ink); font-weight:600">торт наполеон оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">1 340</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">28</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,8</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">25</div>
-            <div style="color:var(--ink); font-weight:600">десерты оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">4 380</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">65</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~2,6</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">26</div>
-            <div style="color:var(--ink); font-weight:600">мини торты оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">620</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">14</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,4</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">27</div>
-            <div style="color:var(--ink); font-weight:600">торты для ресторана</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">880</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">18</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,5</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">28</div>
-            <div style="color:var(--ink); font-weight:600">кондитерская продукция оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">3 210</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">52</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~1,9</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; border-bottom:1px solid var(--line); font-size:14px">
-            <div style="color:var(--ink-soft)">29</div>
-            <div style="color:var(--ink); font-weight:600">торты в магазин</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">2 790</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">38</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~1,7</div>
-          </div>
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:14px 24px; font-size:14px">
-            <div style="color:var(--ink-soft)">30</div>
-            <div style="color:var(--ink); font-weight:600">торт прага оптом</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">575</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">12</div>
-            <div style="text-align:right; color:var(--blue-2); font-weight:700; font-variant-numeric: tabular-nums">~0,3</div>
-          </div>
-
-          <!-- Итог -->
-          <div style="display:grid; grid-template-columns: 50px 1fr 140px 140px 140px; padding:18px 24px; background: var(--bg-2); border-top:2px solid var(--ink); font-size:15px; font-weight:800">
+          <div id="semantic-body"></div>
+          <div style="display:grid;grid-template-columns:50px 1fr 140px 140px 140px;padding:18px 24px;background:var(--bg-2);border-top:2px solid var(--ink);font-size:15px;font-weight:800">
             <div></div>
-            <div style="color:var(--ink); text-transform:uppercase; letter-spacing:.05em; font-size:12px">Итого по&nbsp;30 запросам</div>
-            <div style="text-align:right; color:var(--ink); font-variant-numeric: tabular-nums">92 870</div>
-            <div style="text-align:right; color:var(--ink-soft); font-variant-numeric: tabular-nums">1 729</div>
-            <div style="text-align:right; color:var(--blue-2); font-variant-numeric: tabular-nums">~56 / мес</div>
+            <div style="color:var(--ink);text-transform:uppercase;letter-spacing:.05em;font-size:12px">Итого по&nbsp;30 запросам</div>
+            <div style="text-align:right;color:var(--ink);font-variant-numeric:tabular-nums" id="rf-total">92 870</div>
+            <div style="text-align:right;color:var(--ink-soft);font-variant-numeric:tabular-nums" id="chel-total">1 729</div>
+            <div style="text-align:right;color:var(--blue-2);font-variant-numeric:tabular-nums" id="lead-total">~56 / мес</div>
           </div>
         </div>
-
-        <!-- KPI блок -->
-        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px">
-          <div class="reveal" style="background: var(--ink); border-radius:16px; padding:26px; box-shadow: var(--shadow-xl)">
-            <div style="font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--cyan); text-transform:uppercase; margin-bottom:12px">Объём спроса (РФ)</div>
-            <div style="font-size:40px; font-weight:900; color:#fff; line-height:1; margin-bottom:8px; font-variant-numeric: tabular-nums">92 870</div>
-            <div style="font-size:13px; color:rgba(255,255,255,0.6); line-height:1.5">показов в&nbsp;месяц по&nbsp;30 целевым запросам · дополнительно 1 729 по&nbsp;Челябинской области</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px">
+          <div class="reveal" style="background:var(--ink);border-radius:16px;padding:26px;box-shadow:var(--shadow-xl)">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--cyan);text-transform:uppercase;margin-bottom:12px">Объём спроса (РФ)</div>
+            <div style="font-size:40px;font-weight:900;color:#fff;line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums">92 870</div>
+            <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.5">объем спроса РФ, показов в месяц по 30 целевым запросам. Дополнительно 1 729 по Челябинской области.</div>
           </div>
-          <div class="reveal" style="background:#fff; border-radius:16px; padding:26px; border:1px solid var(--line); box-shadow: var(--shadow-lg)">
-            <div style="font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--blue-2); text-transform:uppercase; margin-bottom:12px">Потенц. кликов</div>
-            <div style="font-size:40px; font-weight:900; color:var(--ink); line-height:1; margin-bottom:8px; font-variant-numeric: tabular-nums">~2786</div>
-            <div style="font-size:13px; color:var(--ink-soft); line-height:1.5">при&nbsp;среднем CTR 3% в&nbsp;ТОП-10 Яндекса</div>
+          <div class="reveal" style="background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);box-shadow:var(--shadow-lg)">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--blue-2);text-transform:uppercase;margin-bottom:12px">Потенц. кликов</div>
+            <div style="font-size:40px;font-weight:900;color:var(--ink);line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums">~2 786</div>
+            <div style="font-size:13px;color:var(--ink-soft);line-height:1.5">потенциальных кликов при среднем CTR 3% в ТОП-10 Яндекса.</div>
           </div>
-          <div class="reveal" style="background: linear-gradient(135deg, #e8f4fb 0%, #d4e8f5 100%); border-radius:16px; padding:26px; border:1px solid var(--blue-2); box-shadow: var(--shadow-lg)">
-            <div style="font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--blue-2); text-transform:uppercase; margin-bottom:12px">Недополучаемые&nbsp;заявки</div>
-            <div style="font-size:40px; font-weight:900; color:var(--blue-2); line-height:1; margin-bottom:8px; font-variant-numeric: tabular-nums">~56</div>
-            <div style="font-size:13px; color:var(--ink); line-height:1.5; font-weight:600">в&nbsp;месяц по&nbsp;РФ при&nbsp;конверсии клик→заявка 2% · +1.0 по&nbsp;Челябинску</div>
+          <div class="reveal" style="background:linear-gradient(135deg,#e8f4fb 0%,#d4e8f5 100%);border-radius:16px;padding:26px;border:1px solid var(--blue-2);box-shadow:var(--shadow-lg)">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--blue-2);text-transform:uppercase;margin-bottom:12px">Недополучаемые&nbsp;заявки</div>
+            <div style="font-size:40px;font-weight:900;color:var(--blue-2);line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums">~56</div>
+            <div style="font-size:13px;color:var(--ink);line-height:1.5;font-weight:600">недополучаемых заявок в месяц по РФ при конверсии клик в заявку 2%. Плюс ~1.0 по Челябинску.</div>
           </div>
         </div>
-
-        <!-- Формула -->
-        <div class="reveal" style="background:#fff; border-radius:16px; padding:20px 24px; border:1px solid var(--line); margin-bottom:14px; display:flex; align-items:center; gap:16px; flex-wrap:wrap">
-          <div style="font-size:12px; font-weight:700; letter-spacing:.08em; color:var(--ink-soft); text-transform:uppercase; flex-shrink:0">Формула</div>
-          <div style="font-size:14px; color:var(--ink); font-family: 'Courier New', monospace; line-height:1.6">
-            Заявки&nbsp;= показы&nbsp;× CTR&nbsp;(3%)&nbsp;× конверсия&nbsp;в&nbsp;заявку&nbsp;(2%)
-            &nbsp;&nbsp;→&nbsp;&nbsp;<strong style="color:var(--blue-2)">92 870&nbsp;× 0,03&nbsp;× 0,02&nbsp;≈ 56&nbsp;заявок/мес&nbsp;(РФ)</strong>
+        <div class="reveal" style="background:#fff;border-radius:16px;padding:20px 24px;border:1px solid var(--line);margin-bottom:14px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase;flex-shrink:0">Формула</div>
+          <div style="font-size:14px;color:var(--ink);font-family:'Courier New',monospace;line-height:1.6">
+            Заявки = показы × CTR 3% × конверсия 2% = 92 870 × 0,03 × 0,02 = 55,72 ≈ 56 заявок/мес по РФ.
+            Челябинск: 1 729 × 0,03 × 0,02 = 1,04 ≈ +1,0 заявки/мес.
           </div>
         </div>
-
-        <!-- Примечание -->
-        <div class="reveal" style="background: #fff7ed; border-left: 3px solid #f59e0b; border-radius: 8px; padding: 14px 18px; font-size: 13px; color: var(--ink); line-height: 1.6">
-          <strong>Примечание.</strong> Данные по&nbsp;показам получены из&nbsp;Яндекс&nbsp;Wordstat (snapshot за&nbsp;последние 30 дней, на&nbsp;14.05.2026) по&nbsp;каждому запросу отдельно для&nbsp;РФ и&nbsp;Челябинской области; прочерк означает, что&nbsp;Wordstat не&nbsp;отдал данных по&nbsp;этой региональной привязке (частотность ниже порога отображения). CTR и&nbsp;конверсия взяты из&nbsp;публичных бенчмарков (Ahrefs, AWR для&nbsp;CTR; типовая конверсия B2B-услуг в&nbsp;заявку). Объём лидов рассчитан на&nbsp;основании этих общих данных; фактическое количество может меняться в&nbsp;зависимости от&nbsp;сезона, позиций сайта в&nbsp;выдаче и&nbsp;качества посадочных страниц.
+        <div class="reveal" style="background:#fff7ed;border-left:3px solid #f59e0b;border-radius:8px;padding:14px 18px;font-size:13px;color:var(--ink);line-height:1.6">
+          <strong>Примечание.</strong> Wordstat показывает частотность запросов по заданным регионам за выбранный период.
+          Расчет не является прогнозом продаж: фактические клики и заявки зависят от позиций, сниппета,
+          сезона, посадочной страницы, скорости обработки лида и качества коммерческого предложения.
         </div>
       </div>
     </section>
 
-<!-- ========== IMPROVEMENTS / PROTOTYPE ========== -->
-    <section class="section proto" id="improve">
+<!-- ========== PROTOTYPE ========== -->
+    <section class="section proto" id="prototype">
       <div class="container">
         <div class="s-head">
           <div class="l reveal">
-            <span class="eyebrow">02 · Прототип решения</span>
-            <h2>Как это может выглядеть</h2>
+            <span class="eyebrow">05 · прототип решения</span>
+            <h2>Структура нового сайта: закупочный сценарий с&nbsp;первого экрана</h2>
           </div>
           <div class="r reveal">
-            Рабочий прототип нового сайта собран и&nbsp;развёрнут.
-            Ниже&nbsp;— ключевые экраны главной страницы (первый экран,
-            каталог, производство, география) и&nbsp;два внутренних
-            раздела: лендинг HoReCa и&nbsp;каталог продукции. Финальный
-            дизайн дорабатывается на&nbsp;этапе UI.
+            Прототип строится по ТЗ: главная, каталог, категории, HoReCa, дистрибьюторы и сети,
+            качество, география, карьера, контакты. Ссылка на ТЗ находится в блоке ниже.
           </div>
         </div>
-
-<!-- ——— CTA прототип ——— -->
         <div class="proto-cta-bar reveal">
           <div class="pcb-text">
             <h4>Прототип · структура блоков</h4>
             <p>
-              Композиция нового сайта: главная с&nbsp;анимированным hero,
-              фасетный каталог 100+ SKU, карточка SKU с&nbsp;PDF-спецификацией,
-              лендинги каналов продаж (Ритейл / HoReCa / Дистрибьюторы),
-              страница производства с&nbsp;видео, карта дилеров на&nbsp;Я.Картах.
-              Финальный UI готовится после согласования концепции.
+              Главная с B2B-УТП, фасетный каталог 100+ SKU, карточка товара, лендинги каналов
+              продаж, производство, качество, география поставок и сегментированные формы.
             </p>
           </div>
-          <a class="btn-white" href="https://cloud.mail.ru/public/Qd2S/uEDQqvy9J/%D0%A2%D0%97_%D0%A4%D0%B0%D0%BD%D1%82%D1%8D%D0%BB%D1%8C.docx?weblink=Qd2S/uEDQqvy9J/%D0%A2%D0%97_%D0%A4%D0%B0%D0%BD%D1%82%D1%8D%D0%BB%D1%8C.docx" target="_blank" rel="noopener">
+          <a class="btn-white" href="https://disk.yandex.com/i/P_chxBwuAGBVvA" target="_blank" rel="noopener">
             Открыть ТЗ · DOCX
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-            >
-              <path
-                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-              />
-              <polyline points="15 3 21 3 21 9" />
-              <line x1="10" y1="14" x2="21" y2="3" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
         </div>
-
-<!-- ——— Прото-галерея: экраны прототипа fantel.lovable.app ——— -->
-        <div class="proto-gallery" style="display:flex; flex-direction:column; gap:32px; margin-bottom: 16px;">
-
-          <!-- Главная · Hero -->
-          <figure class="reveal" style="margin:0; background:#fff; border-radius:16px; border:1px solid var(--line); box-shadow: var(--shadow-lg); overflow:hidden;">
-            <div style="display:flex; align-items:center; gap:8px; padding:12px 18px; background: var(--bg-2); border-bottom:1px solid var(--line);">
-              <span style="width:10px; height:10px; border-radius:50%; background:#ff6053; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#ffbc2e; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#28c93f; display:inline-block;"></span>
-              <span style="font-family: 'Courier New', monospace; font-size:12px; color: var(--muted); margin-left:14px;">kf-fantel.com</span>
-              <span style="margin-left:auto; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color: var(--blue-2);">Главная · первый экран</span>
+        <div class="imp-features" style="margin-top: 0; margin-bottom: 72px">
+          <div class="imp-card reveal" style="grid-column: span 3">
+            <div class="road-timeline" style="display:grid;gap:10px;margin-top:4px">
+              <div style="display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px;background:#f7f9fc;border:1px solid var(--line);border-radius:12px;font-size:14px;color:var(--ink-soft);line-height:1.5"><span style="font-weight:800;color:var(--blue-2)">01</span><span>Первый экран сообщает за 3-5 секунд: Fantel производит торты и пирожные для B2B-поставок по России.</span></div>
+              <div style="display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px;background:#f7f9fc;border:1px solid var(--line);border-radius:12px;font-size:14px;color:var(--ink-soft);line-height:1.5"><span style="font-weight:800;color:var(--blue-2)">02</span><span>Каталог дает закупщику параметры: вес, срок годности, температура, упаковка, короб, документы.</span></div>
+              <div style="display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px;background:#f7f9fc;border:1px solid var(--line);border-radius:12px;font-size:14px;color:var(--ink-soft);line-height:1.5"><span style="font-weight:800;color:var(--blue-2)">03</span><span>Формы передают сегмент клиента, город, объем, интересующую категорию, UTM и yclid.</span></div>
             </div>
-            <img src="media/future-website/desktop-01-hero.png" alt="Главная нового сайта Фантэль — первый экран" loading="lazy" style="display:block; width:100%; height:auto;" />
-          </figure>
-
-          <!-- Главная · Каталог -->
-          <figure class="reveal" style="margin:0; background:#fff; border-radius:16px; border:1px solid var(--line); box-shadow: var(--shadow-lg); overflow:hidden;">
-            <div style="display:flex; align-items:center; gap:8px; padding:12px 18px; background: var(--bg-2); border-bottom:1px solid var(--line);">
-              <span style="width:10px; height:10px; border-radius:50%; background:#ff6053; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#ffbc2e; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#28c93f; display:inline-block;"></span>
-              <span style="font-family: 'Courier New', monospace; font-size:12px; color: var(--muted); margin-left:14px;">kf-fantel.com</span>
-              <span style="margin-left:auto; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color: var(--blue-2);">Главная · блок каталога</span>
+            <div style="margin-top:20px">
+              <a class="btn btn-ghost" href="kf-fantel.com" target="_blank" rel="noopener" style="display:inline-flex">Прототип</a>
             </div>
-            <img src="media/future-website/desktop-02-catalog.png" alt="Главная — блок каталога продукции" loading="lazy" style="display:block; width:100%; height:auto;" />
-          </figure>
-
-          <!-- Главная · Производство -->
-          <figure class="reveal" style="margin:0; background:#fff; border-radius:16px; border:1px solid var(--line); box-shadow: var(--shadow-lg); overflow:hidden;">
-            <div style="display:flex; align-items:center; gap:8px; padding:12px 18px; background: var(--bg-2); border-bottom:1px solid var(--line);">
-              <span style="width:10px; height:10px; border-radius:50%; background:#ff6053; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#ffbc2e; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#28c93f; display:inline-block;"></span>
-              <span style="font-family: 'Courier New', monospace; font-size:12px; color: var(--muted); margin-left:14px;">kf-fantel.com</span>
-              <span style="margin-left:auto; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color: var(--blue-2);">Главная · блок производства</span>
-            </div>
-            <img src="media/future-website/desktop-03-production.png" alt="Главная — блок производства с видео" loading="lazy" style="display:block; width:100%; height:auto;" />
-          </figure>
-
-          <!-- Главная · География -->
-          <figure class="reveal" style="margin:0; background:#fff; border-radius:16px; border:1px solid var(--line); box-shadow: var(--shadow-lg); overflow:hidden;">
-            <div style="display:flex; align-items:center; gap:8px; padding:12px 18px; background: var(--bg-2); border-bottom:1px solid var(--line);">
-              <span style="width:10px; height:10px; border-radius:50%; background:#ff6053; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#ffbc2e; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#28c93f; display:inline-block;"></span>
-              <span style="font-family: 'Courier New', monospace; font-size:12px; color: var(--muted); margin-left:14px;">kf-fantel.com</span>
-              <span style="margin-left:auto; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color: var(--blue-2);">Главная · блок географии</span>
-            </div>
-            <img src="media/future-website/desktop-04-geography.png" alt="Главная — блок географии поставок" loading="lazy" style="display:block; width:100%; height:auto;" />
-          </figure>
-
-          <!-- Страница HoReCa -->
-          <figure class="reveal" style="margin:0; background:#fff; border-radius:16px; border:1px solid var(--line); box-shadow: var(--shadow-lg); overflow:hidden;">
-            <div style="display:flex; align-items:center; gap:8px; padding:12px 18px; background: var(--bg-2); border-bottom:1px solid var(--line);">
-              <span style="width:10px; height:10px; border-radius:50%; background:#ff6053; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#ffbc2e; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#28c93f; display:inline-block;"></span>
-              <span style="font-family: 'Courier New', monospace; font-size:12px; color: var(--muted); margin-left:14px;">kf-fantel.com/horeca/</span>
-              <span style="margin-left:auto; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color: var(--blue-2);">Лендинг HoReCa</span>
-            </div>
-            <img src="media/future-website/page-horeca.png" alt="Лендинг HoReCa" loading="lazy" style="display:block; width:100%; height:auto;" />
-          </figure>
-
-          <!-- Страница Продукция -->
-          <figure class="reveal" style="margin:0; background:#fff; border-radius:16px; border:1px solid var(--line); box-shadow: var(--shadow-lg); overflow:hidden;">
-            <div style="display:flex; align-items:center; gap:8px; padding:12px 18px; background: var(--bg-2); border-bottom:1px solid var(--line);">
-              <span style="width:10px; height:10px; border-radius:50%; background:#ff6053; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#ffbc2e; display:inline-block;"></span>
-              <span style="width:10px; height:10px; border-radius:50%; background:#28c93f; display:inline-block;"></span>
-              <span style="font-family: 'Courier New', monospace; font-size:12px; color: var(--muted); margin-left:14px;">kf-fantel.com/products/</span>
-              <span style="margin-left:auto; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color: var(--blue-2);">Каталог продукции</span>
-            </div>
-            <img src="media/future-website/page-products.png" alt="Страница каталога продукции" loading="lazy" style="display:block; width:100%; height:auto;" />
-          </figure>
-
+          </div>
         </div>
-
-<!-- ——— Feature-карточки ——— -->
-        <div class="imp-features" style="margin-top: 60px">
-          <div class="imp-card reveal">
-            <div class="ic-ico">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M3 9h18M9 21V9"/>
-              </svg>
+        <div class="proto-gallery reveal" style="display:flex;flex-direction:column;gap:32px;margin-bottom:16px;">
+          <figure class="reveal" style="margin:0;background:#fff;border-radius:16px;border:1px solid var(--line);box-shadow: var(--shadow-lg);overflow:hidden;">
+            <div style="display:flex;align-items:center;gap:8px;padding:12px 18px;background: var(--bg-2);border-bottom:1px solid var(--line);">
+              <span style="width:10px;height:10px;border-radius:50%;background:#ff6053;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#ffbc2e;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#28c93f;display:inline-block;"></span>
+              <span style="font-family: 'Courier New', monospace;font-size:12px;color: var(--muted);margin-left:14px;">kf-fantel.com</span>
+              <span style="margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color: var(--blue-2);">Главная · первый экран</span>
             </div>
-            <h4>B2B-витрина с&nbsp;фасетным каталогом</h4>
-            <p>
-              100+ SKU с&nbsp;фото, составом, фасовкой, BBE и&nbsp;PDF-спецификацией.
-              Фильтр по&nbsp;весу, сроку годности и&nbsp;каналу продаж.
-              CTA «Запросить прайс» вместо корзины.
-            </p>
-          </div>
-          <div class="imp-card reveal">
-            <div class="ic-ico">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
+            <img src="media/future-website/desktop-01-hero.png" alt="Главная Fantel, первый экран из локального прототипа" loading="lazy" style="display:block;width:100%;height:auto;" />
+          </figure>
+          <figure class="reveal" style="margin:0;background:#fff;border-radius:16px;border:1px solid var(--line);box-shadow: var(--shadow-lg);overflow:hidden;">
+            <div style="display:flex;align-items:center;gap:8px;padding:12px 18px;background: var(--bg-2);border-bottom:1px solid var(--line);">
+              <span style="width:10px;height:10px;border-radius:50%;background:#ff6053;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#ffbc2e;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#28c93f;display:inline-block;"></span>
+              <span style="font-family: 'Courier New', monospace;font-size:12px;color: var(--muted);margin-left:14px;">kf-fantel.com</span>
+              <span style="margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color: var(--blue-2);">Дистрибьюторам · условия поставок</span>
             </div>
-            <h4>Лендинги каналов продаж</h4>
-            <p>
-              Отдельные посадочные страницы для&nbsp;Ритейла, HoReCa
-              и&nbsp;Дистрибьюторов с&nbsp;квалификацией лида
-              на&nbsp;форме («Стать дилером»).
-            </p>
-          </div>
-          <div class="imp-card reveal">
-            <div class="ic-ico">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="23 7 16 12 23 17 23 7"/>
-                <rect x="1" y="5" width="15" height="14" rx="2"/>
-              </svg>
+            <img src="media/future-website/desktop-02-catalog.png" alt="Главная Fantel, блок каталога из локального прототипа" loading="lazy" style="display:block;width:100%;height:auto;" />
+          </figure>
+          <figure class="reveal" style="margin:0;background:#fff;border-radius:16px;border:1px solid var(--line);box-shadow: var(--shadow-lg);overflow:hidden;">
+            <div style="display:flex;align-items:center;gap:8px;padding:12px 18px;background: var(--bg-2);border-bottom:1px solid var(--line);">
+              <span style="width:10px;height:10px;border-radius:50%;background:#ff6053;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#ffbc2e;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#28c93f;display:inline-block;"></span>
+              <span style="font-family: 'Courier New', monospace;font-size:12px;color: var(--muted);margin-left:14px;">kf-fantel.com</span>
+              <span style="margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color: var(--blue-2);">Поставки</span>
             </div>
-            <h4>Производство: видео и&nbsp;карта</h4>
-            <p>
-              Промо-ролик цеха + виртуальный 360°-тур + ISO/HACCP-плашки.
-              Интерактивная карта дилеров и&nbsp;6&nbsp;представительств
-              на&nbsp;Яндекс.Картах.
-            </p>
-          </div>
-          <div class="imp-card reveal">
-            <div class="ic-ico">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                <path d="M12 22V12M12 12L3.27 7.5M12 12l8.73-4.5"/>
-              </svg>
+            <img src="media/future-website/поставки.png" alt="Блок производства нового сайта Fantel" loading="lazy" style="display:block;width:100%;height:auto;" />
+          </figure>
+          <figure class="reveal" style="margin:0;background:#fff;border-radius:16px;border:1px solid var(--line);box-shadow: var(--shadow-lg);overflow:hidden;">
+            <div style="display:flex;align-items:center;gap:8px;padding:12px 18px;background: var(--bg-2);border-bottom:1px solid var(--line);">
+              <span style="width:10px;height:10px;border-radius:50%;background:#ff6053;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#ffbc2e;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#28c93f;display:inline-block;"></span>
+              <span style="font-family: 'Courier New', monospace;font-size:12px;color: var(--muted);margin-left:14px;">kf-fantel.com</span>
+              <span style="margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color: var(--blue-2);">Форма поставки</span>
             </div>
-            <h4>AI-автоматизация заявок</h4>
-            <p>
-              n8n-маршрутизация форм в&nbsp;CRM, авторазбор писем
-              на&nbsp;partner@, AI-генерация спецификаций и&nbsp;КП
-              для&nbsp;менеджера. Без&nbsp;публичного чата.
-            </p>
-          </div>
+            <img src="media/future-website/формапоставки.png" alt="Блок производства нового сайта Fantel" loading="lazy" style="display:block;width:100%;height:auto;" />
+          </figure>
+          <figure class="reveal" style="margin:0;background:#fff;border-radius:16px;border:1px solid var(--line);box-shadow: var(--shadow-lg);overflow:hidden;">
+            <div style="display:flex;align-items:center;gap:8px;padding:12px 18px;background: var(--bg-2);border-bottom:1px solid var(--line);">
+              <span style="width:10px;height:10px;border-radius:50%;background:#ff6053;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#ffbc2e;display:inline-block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#28c93f;display:inline-block;"></span>
+              <span style="font-family: 'Courier New', monospace;font-size:12px;color: var(--muted);margin-left:14px;">kf-fantel.com</span>
+              <span style="margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color: var(--blue-2);">Каталог с температурным режимом</span>
+            </div>
+            <img src="media/future-website/каталогсрежимом.png" alt="Блок географии поставок Fantel" loading="lazy" style="display:block;width:100%;height:auto;" />
+          </figure>
         </div>
       </div>
     </section>
 
-<!-- ========== PROPOSALS ========== -->
-    <section class="section prop-dark" id="proposals">
-      <div class="grid-bg"></div>
+<!-- ========== SCOPE ========== -->
+    <section class="section" id="scope" style="background: var(--bg-2); padding-top: 80px; padding-bottom: 80px">
       <div class="container">
         <div class="s-head">
           <div class="l reveal">
-            <span class="eyebrow">03 · Два варианта</span>
-            <h2>Выберите подходящий&nbsp;пакет</h2>
+            <span class="eyebrow">06 · ожидаемый результат</span>
+            <h2>Что должно быть готово перед запуском рекламы</h2>
           </div>
           <div class="r reveal">
-            Три пакета под&nbsp;бюджет и&nbsp;сроки: базовый сайт
-            на&nbsp;1С-Битрикс, расширенный корпоративный на&nbsp;Битрикс
-            с&nbsp;квизом и&nbsp;блогом, и&nbsp;самописная реализация
-            с&nbsp;ЛК дилера, мультиязычностью и&nbsp;авторазбором писем через&nbsp;n8n.
+            ТЗ фиксирует многостраничный B2B-сайт, SEO-базу, CRM-интеграции, Метрику,
+            быстрый каталог и приемку на 320-1920 px.
           </div>
         </div>
-
-        <div class="tiers">
-          <div class="tier t1 reveal">
-            <div class="tier-num">01</div>
-            <div class="tag">Битрикс Базовый</div>
-            <h3>Базовый сайт<br>на&nbsp;1С-Битрикс</h3>
-            <p class="desc">
-              Корпоративный сайт на&nbsp;1С-Битрикс: дизайн,
-              многостраничная структура (6–12 страниц), мобильная
-              адаптивность, базовая интеграция с&nbsp;CRM, анимации
-              и&nbsp;интерактивные элементы.
-            </p>
-            <div class="price">
-              <div class="v">506&nbsp;867&nbsp;₽</div>
-              <div class="u">/ 42 раб. дня · 8–9 недель</div>
-            </div>
-            <ul>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa7bd" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Дизайн + мобильная адаптивность
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa7bd" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>6–12 страниц: главная, продукция, производство, контакты
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa7bd" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Базовая форма «Стать дилером» с&nbsp;уведомлением менеджеру
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa7bd" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Анимации и&nbsp;интерактивные элементы
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa7bd" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Интеграция с&nbsp;CRM (Битрикс24 / amoCRM)
-              </li>
-            </ul>
-            <div class="cta-tier">Минимум риска — быстрый запуск</div>
+        <div class="imp-features" style="margin-top: 0; grid-template-columns: 1fr 1fr !important">
+          <div class="imp-card reveal">
+            <div class="ic-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h4>Структура сайта</h4>
+            <p>Главная, каталог, торты оптом, пирожные оптом, десерты для HoReCa. Дистрибьюторам и сетям, качество и производство, география поставок. Карьера и контакты с сегментированными менеджерами.</p>
           </div>
-
-          <div class="tier t2 reveal">
-            <div class="tier-num">02</div>
-            <div class="tag">Битрикс</div>
-            <h3>Расширенный сайт<br>на&nbsp;1С-Битрикс</h3>
-            <p class="desc">
-              Всё из&nbsp;«Битрикс Базовый» + квиз-калькулятор,
-              блог/новости, расширенные формы заявок с&nbsp;логикой
-              и&nbsp;статусами для&nbsp;каналов Ритейл / HoReCa /
-              Дистрибьюторы.
-            </p>
-            <div class="price">
-              <div class="v">634&nbsp;161&nbsp;₽</div>
-              <div class="u">/ 47 раб. дней · 9–10 недель</div>
-            </div>
-            <ul>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2BB7FF" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Всё из&nbsp;«Битрикс Базовый»
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2BB7FF" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Квиз-калькулятор с&nbsp;логикой переходов (3–7 шагов)
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2BB7FF" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Блог / Новости с&nbsp;тегами и&nbsp;модерацией
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2BB7FF" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Расширенные формы заявок (логика, статусы)
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2BB7FF" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Глубокие интеграции с&nbsp;Битрикс24 и&nbsp;1С
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2BB7FF" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>SEO-оптимизация и&nbsp;Schema.org
-              </li>
-            </ul>
-            <div class="cta-tier">Оптимальное соотношение цены и&nbsp;функций</div>
+          <div class="imp-card reveal">
+            <div class="ic-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+            <h4>Критерии приемки</h4>
+            <p>Уникальные title, description, H1, человекочитаемые URL, sitemap и robots. Формы работают, передают UTM/yclid и имеют цели в Метрике. Каталог не ломается на мобильных, изображения оптимизированы, PageSpeed ориентир 85+.</p>
           </div>
-
-          <div class="tier t3 reveal">
-            <div class="recommended">★ Рекомендуем</div>
-            <div class="tier-num">03</div>
-            <div class="tag">Самописная реализация</div>
-            <h3>Самописная реализация<br>с&nbsp;ЛК и&nbsp;n8n</h3>
-            <p class="desc">
-              Всё из&nbspБитрикс» на&nbsp;собственной платформе + личный
-              кабинет дилера, мультиязычность и&nbsp;автоматический разбор
-              писем на&nbsp;partner@ через n8n с&nbsp;маршрутизацией заявок
-              в&nbsp;CRM по&nbsp;регионам.
-            </p>
-            <div class="price">
-              <div class="v">1&nbsp;092&nbsp;394&nbsp;₽</div>
-              <div class="u">/ 47 раб. дней · 9–10 недель</div>
-            </div>
-            <ul>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Всё из&nbsp;«Битрикс»
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Личный кабинет дилера: история заказов, документы, статусы
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Мультиязычность (RU/EN + отдельные SEO)
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Авторазбор писем partner@ через n8n + классификация
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Полный контроль над&nbsp;кодом и&nbsp;данными
-              </li>
-            </ul>
-            <div class="cta-tier">Максимум функций + авторазбор писем</div>
-          </div>
-        </div>
         </div>
       </div>
     </section>
 
-<!-- ========== COMPARISON ========== -->
-    <section class="section-sm">
+<!-- ========== DOCS ========== -->
+    <section class="section" id="docs">
       <div class="container">
         <div class="s-head">
           <div class="l reveal">
-            <span class="eyebrow">04 · Сравнение</span>
-            <h2>Что входит в&nbsp;каждый пакет</h2>
-          </div>
-          <div class="r reveal">
-            Сводный обзор по ключевым блокам работ на основе сметы.
-            Полная детализация — по&nbsp;ссылке на&nbsp;смету ниже.
+            <span class="eyebrow">07 · документы</span>
+            <h2>Коммерческое предложение</h2>
           </div>
         </div>
-
-        <div class="cmp-wrap reveal">
-          <table class="cmp-table">
-            <thead>
-              <tr>
-                <th>Блок работ</th>
-                <th>Битрикс Базовый</th>
-                <th>Битрикс</th>
-                <th class="best">Самописная реализация</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Дизайн и&nbsp;публичные страницы</td>
-                <td><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Главная, продукция, производство, география, контакты</small></td>
-                <td><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>То&nbsp;же + блог/новости, расширенные лендинги каналов</small></td>
-                <td class="best"><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Кастомный дизайн + анимации, микровзаимодействия, максимум SEO-оптимизации</small></td>
-              </tr>
-              <tr>
-                <td>Калькулятор-квиз и&nbsp;формы</td>
-                <td><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Базовые формы заявок с&nbsp;отправкой в&nbsp;CRM (без&nbsp;квиза)</small></td>
-                <td><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Квиз 3–7 шагов + расширенные формы (логика, статусы)</small></td>
-                <td class="best"><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>То&nbsp;же + кастомные сценарии и&nbsp;A/B-тесты</small></td>
-              </tr>
-              <tr>
-                <td>Мобильная адаптивность</td>
-                <td><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Все страницы адаптированы под&nbsp;мобильные</small></td>
-                <td><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Mobile-first подход, оптимизация под&nbsp;скорость</small></td>
-                <td class="best"><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Mobile-first + расширенные микроанимации</small></td>
-              </tr>
-              <tr>
-                <td>Личный кабинет</td>
-                <td><span class="cmp-dash">—</span></td>
-                <td><span class="cmp-dash">—</span></td>
-                <td class="best"><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>ЛК клиента: документы, счета, статусы задач</small></td>
-              </tr>
-              <tr>
-                <td>Интеграция с&nbsp;1С и&nbsp;CRM</td>
-                <td><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Отправка заявок в&nbsp;Битрикс24 / amoCRM</small></td>
-                <td><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Полный обмен с&nbsp;Битрикс24, webhooks, кастомные поля</small></td>
-                <td class="best"><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Любая CRM + интеграция с&nbsp;1С, биллингом, почтой</small></td>
-              </tr>
-              <tr>
-                <td>SEO-оптимизация</td>
-                <td><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Базовая: мета-теги, URL, sitemap</small></td>
-                <td><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Расширенная: schema.org, OG-теги, перелинковка</small></td>
-                <td class="best"><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Полная: schema.org Service / FAQ / Article, отдельные SEO на&nbsp;каждую услугу</small></td>
-              </tr>
-              <tr>
-                <td>Блог / Новости</td>
-                <td><span class="cmp-dash">—</span></td>
-                <td><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Статьи, новости, подписка и&nbsp;комментарии</small></td>
-                <td class="best"><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>То&nbsp;же + теги, категории и&nbsp;SEO-хаб</small></td>
-              </tr>
-              <tr>
-                <td>Мультиязычность</td>
-                <td><span class="cmp-dash">—</span></td>
-                <td><span class="cmp-dash">—</span></td>
-                <td class="best"><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>2+ языка, переключение, отдельные SEO-настройки</small></td>
-              </tr>
-              <tr>
-                <td>Авторазбор входящих писем (n8n)</td>
-                <td><span class="cmp-dash">—</span></td>
-                <td><span class="cmp-dash">—</span></td>
-                <td class="best"><span class="cmp-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><br><small>Классификация, извлечение ИНН/контрагента/суммы и&nbsp;типа обращения, задачи в&nbsp;CRM, черновик ответа</small></td>
-              </tr>
-              <tr>
-                <td>Гарантия и&nbsp;поддержка</td>
-                <td>3 мес.</td>
-                <td>6 мес. + SLA</td>
-                <td class="best">6 мес. + SLA + приоритетная линия</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="cmp-footer">
-            <div class="price-row">
-              <div class="p-item">
-                <div class="l">Битрикс Базовый</div>
-                <div class="v">506&nbsp;867&nbsp;₽</div>
-              </div>
-              <div class="p-item">
-                <div class="l">Битрикс</div>
-                <div class="v">634&nbsp;161&nbsp;₽</div>
-              </div>
-              <div class="p-item best">
-                <div class="l">Самописная реализация</div>
-                <div class="v">1&nbsp;092&nbsp;394&nbsp;₽</div>
-              </div>
-            </div>
-            <a class="btn btn-primary" href="https://cloud.mail.ru/public/Qd2S/uEDQqvy9J/%D0%A1%D0%BC%D0%B5%D1%82%D0%B0_%D0%A4%D0%B0%D0%BD%D1%82%D1%8D%D0%BB%D1%8C.pdf" target="_blank" rel="noopener">Полная смета · PDF
-              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<!-- ========== AI AUTOMATION ========== -->
-    <section class="section-sm" id="ai">
-      <div class="container">
-        <div class="s-head">
-          <div class="l reveal">
-            <span class="eyebrow">05 · Автоматизация</span>
-            <h2>Авторазбор входящих писем<br>через&nbsp;n8n</h2>
-          </div>
-          <div class="r reveal">
-            Модуль закрывает рутину менеджеров: разбирает почту
-            на&nbsp;partner@kf-fantel.com, маршрутизирует заявки
-            в&nbsp;CRM по&nbsp;регионам, готовит черновики ответов
-            и&nbsp;спецификаций. Работает за&nbsp;кулисами&nbsp;— на&nbsp;сайте
-            публичный чат не&nbsp;размещаем. Входит в&nbsp;тариф
-            «Самописная реализация», в&nbsp;остальные подключается отдельно.
-          </div>
-        </div>
-
-        <div class="reveal" style="display:grid; grid-template-columns: 1.2fr 1fr; gap:16px; margin-top: 40px">
-          <div style="background: var(--ink); border-radius:20px; padding:36px; box-shadow: var(--shadow-xl); position:relative; overflow:hidden">
-            <div style="position:absolute; top:24px; right:24px; font-size:10px; font-weight:700; letter-spacing:.1em; color:var(--cyan); text-transform:uppercase">n8n · LLM</div>
-            <div style="font-size:11px; font-weight:700; letter-spacing:.08em; color:rgba(255,255,255,0.55); text-transform:uppercase; margin-bottom:10px">Inbox → CRM</div>
-            <h3 style="font-size:24px; font-weight:800; color:#fff; margin:0 0 14px; line-height:1.2">n8n-маршрутизация и&nbsp;AI-помощник менеджеру</h3>
-            <p style="font-size:14px; color:rgba(255,255,255,0.7); line-height:1.6; margin:0 0 18px">Заявки с&nbsp;сайта и&nbsp;письма на&nbsp;partner@ автоматически
-              классифицируются (дилер / HoReCa / ритейл / поставщик сырья),
-              маршрутизируются по&nbsp;региону на&nbsp;менеджера представительства,
-              в&nbsp;CRM создаётся сделка, AI-помощник готовит черновик КП
-              и&nbsp;спецификации.</p>
-            <ul style="list-style:none; padding:0; margin:0 0 18px; display:grid; gap:8px">
-              <li style="font-size:13px; color:rgba(255,255,255,0.75); display:flex; gap:8px"><span style="color:var(--cyan); flex-shrink:0">→</span>Классификация заявок: дилер / HoReCa / ритейл / экспорт / поставщик</li>
-              <li style="font-size:13px; color:rgba(255,255,255,0.75); display:flex; gap:8px"><span style="color:var(--cyan); flex-shrink:0">→</span>Извлечение из&nbsp;письма: компания, регион, объём, контакт, ИНН</li>
-              <li style="font-size:13px; color:rgba(255,255,255,0.75); display:flex; gap:8px"><span style="color:var(--cyan); flex-shrink:0">→</span>Маршрутизация в&nbsp;CRM по&nbsp;6 представительствам автоматически</li>
-              <li style="font-size:13px; color:rgba(255,255,255,0.75); display:flex; gap:8px"><span style="color:var(--cyan); flex-shrink:0">→</span>AI-помощник: генерация КП и&nbsp;спецификаций SKU по&nbsp;запросу</li>
-            </ul>
-            <div style="display:flex; gap:32px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.08)">
-              <div><div style="font-size:28px; font-weight:900; color:#fff; line-height:1">12</div><div style="font-size:11px; color:rgba(255,255,255,0.5); margin-top:2px">рабочих дней</div></div>
-              <div><div style="font-size:28px; font-weight:900; color:var(--cyan); line-height:1">320&nbsp;000&nbsp;₽</div><div style="font-size:11px; color:rgba(255,255,255,0.5); margin-top:2px">стоимость модуля</div></div>
-            </div>
-          </div>
-
-          <div style="background: linear-gradient(135deg, var(--spark), var(--spark-2)); border-radius:20px; padding:36px; display:flex; flex-direction:column; justify-content:space-between; box-shadow: 0 40px 80px -30px rgba(255, 107, 26, 0.4)">
-            <div>
-              <div style="font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(26,13,0,0.7); text-transform:uppercase; margin-bottom:10px">Вопрос к&nbsp;команде «Фантэль»</div>
-              <div style="font-size:20px; font-weight:800; color:#1a0d00; line-height:1.3; margin-bottom:14px">Какие рутинные задачи отнимают у&nbsp;менеджеров регионов больше всего времени?</div>
-              <p style="font-size:13px; color:rgba(26,13,0,0.85); line-height:1.6; margin:0 0 14px">Подготовка спецификаций SKU, расчёт стоимости отгрузки
-                по&nbsp;паллетам, формирование КП под&nbsp;нового дилера,
-                сверка остатков с&nbsp;1С, ответы на&nbsp;типовые запросы
-                ритейла&nbsp;— LLM и&nbsp;n8n-сценарии закрывают большинство
-                таких задач. Расскажите, где «уходят часы»&nbsp;— подберём
-                автоматизацию под&nbsp;конкретный процесс.</p>
-            </div>
-            <div style="padding-top:14px; border-top:1px solid rgba(26,13,0,0.25)">
-              <div style="font-size:11px; font-weight:700; letter-spacing:.08em; color:rgba(26,13,0,0.7); text-transform:uppercase; margin-bottom:6px">Что уже умеем</div>
-              <div style="font-size:13px; color:rgba(26,13,0,0.9); line-height:1.5">Разбор писем и&nbsp;документов&nbsp;· RAG по&nbsp;базе знаний&nbsp;· генерация КП и&nbsp;спецификаций&nbsp;· AI-помощник менеджеру (без&nbsp;публичного чата)</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<!-- ========== ROADMAP ========== -->
-    <section class="section road" id="roadmap">
-      <div class="container">
-        <div class="s-head">
-          <div class="l reveal">
-            <span class="eyebrow">06 · Поэтапная реализация</span>
-            <h2>Дорожная карта и&nbsp;что нужно от&nbsp;вас</h2>
-          </div>
-          <div class="r reveal">
-            8–10 недель, с&nbsp;демо после каждого этапа. Вы видите прогресс
-            и&nbsp;согласуете результат на&nbsp;каждом шаге&nbsp;— не&nbsp;в&nbsp;конце проекта.
-            Со&nbsp;стороны клиента нужны: бриф, фото SKU и&nbsp;цеха, промо-видео,
-            ISO/HACCP-сертификаты, логотип в&nbsp;векторе, доступы к&nbsp;домену и&nbsp;CRM.
-          </div>
-        </div>
-      </div>
-
-      <!-- road-track is full width so the line spans 100vw -->
-      <div class="road-track">
-        <div class="road-line" id="roadLine"></div>
-        <!-- steps are constrained to container -->
-        <div class="container">
-          <div class="road-steps">
-            <div class="road-step reveal">
-              <div class="rs-content">
-                <div class="rs-n">ЭТАП 01</div>
-                <h4>Бриф &amp;&nbsp;UX</h4>
-                <p>
-                  Глубинные интервью, анализ конкурентов и&nbsp;каналов
-                  продаж, sitemap (~22 страницы), Lo-fi прототипы главной,
-                  каталога SKU и&nbsp;B2B-форм в&nbsp;Figma.
-                </p>
-                <div class="rs-t">1–2 недели</div>
-              </div>
-              <div class="rs-node"></div>
-            </div>
-            <div class="road-step reveal">
-              <div class="rs-content">
-                <div class="rs-n">ЭТАП 02</div>
-                <h4>Дизайн</h4>
-                <p>
-                  Дизайн-система, главная с&nbsp;анимированным hero,
-                  каталог, карточка SKU, 3 лендинга каналов
-                  (Ритейл / HoReCa / Дистрибьюторы), карта дилеров,
-                  мобильные адаптивы.
-                </p>
-                <div class="rs-t">3–4 недели</div>
-              </div>
-              <div class="rs-node"></div>
-            </div>
-            <div class="road-step reveal">
-              <div class="rs-content">
-                <div class="rs-n">ЭТАП 03</div>
-                <h4>Разработка</h4>
-                <p>
-                  Вёрстка, фасетный каталог, B2B-формы → CRM, карта
-                  Яндекс.Карт, видео-блок производства, RU/EN, кнопки
-                  MAX / Telegram / WhatsApp, n8n-автоматизация
-                  заявок и&nbsp;интеграции 1С / ЭДО.
-                </p>
-                <div class="rs-t">4–5 недель</div>
-              </div>
-              <div class="rs-node"></div>
-            </div>
-            <div class="road-step reveal">
-              <div class="rs-content">
-                <div class="rs-n">ЭТАП 04</div>
-                <h4>QA &amp;&nbsp;Запуск</h4>
-                <p>
-                  Кросс-браузерное тестирование, 301-редиректы
-                  с&nbsp;текущего kf-fantel.com, перенос на&nbsp;боевой домен,
-                  обучение менеджеров регионов, гарантия 3–6 мес.
-                </p>
-                <div class="rs-t">1–2 недели</div>
-              </div>
-              <div class="rs-node"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="road-total reveal">
-          <div class="rt-item">
-            <div class="l">Общий срок</div>
-            <div class="v">8–10 недель</div>
-          </div>
-          <div class="rt-item">
-            <div class="l">Команда</div>
-            <div class="v">PM · Dev · Designer · QA</div>
-          </div>
-          <div class="rt-item">
-            <div class="l">Демо-сессии</div>
-            <div class="v">после каждого этапа</div>
-          </div>
-          <div class="rt-item">
-            <div class="l">Оплата</div>
-            <div class="v">по этапам, без&nbsp;предоплаты 100%</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<!-- ========== FINAL CTA ========== -->
-    <section class="final" id="contact">
-      <div class="bg-ring"></div>
-      <div class="container inner">
-        <h2 class="reveal">
-          Согласуем детали —<br /><span class="grad">и&nbsp;в&nbsp;работу?</span>
-        </h2>
-        <p class="reveal">
-          Структура прототипа собрана, ТЗ и&nbsp;смета&nbsp;— на&nbsp;руках.
-          Готовы обсудить правки, пакет и&nbsp;сроки&nbsp;—
-          и&nbsp;стартовать с&nbsp;первого спринта.
-        </p>
-        <div class="fctas reveal">
-          <a class="btn btn-primary" href="https://t.me/neatstudioru"
-            >Подписать договор
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-            >
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </a>
-          <a class="btn btn-ghost" href="mailto:info@neat-studio.ru"
-            >info@neat-studio.ru</a
-          >
-        </div>
-
-<div class="reveal" style="margin:8px auto 28px;max-width:860px;background:linear-gradient(135deg,#0b1a2b 0%,#11334d 100%);border-radius:20px;padding:28px 32px;box-shadow:0 20px 50px rgba(10,40,70,.25);display:grid;grid-template-columns:72px 1fr auto;gap:24px;align-items:center;text-align:left">
-          <div style="width:72px;height:72px;border-radius:18px;background:linear-gradient(135deg,#2BB7FF 0%,#1a6fa8 100%);display:flex;align-items:center;justify-content:center;font-size:34px;line-height:1;box-shadow:0 8px 24px rgba(43,183,255,.35)">📈</div>
-          <div>
-            <div style="font-size:11px;font-weight:800;letter-spacing:.12em;color:#7fd3ff;text-transform:uppercase;margin-bottom:8px">Специальное предложение</div>
-            <div style="font-size:18px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:8px">SEO-продвижение сайта&nbsp;— в&nbsp;подарок</div>
-            <div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.55">При подписании договора&nbsp;— настройка семантики, метатеги, микроразметка и&nbsp;продвижение по&nbsp;30 целевым B2B-запросам.</div>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;border-left:1px solid rgba(255,255,255,.12);padding-left:24px">
-            <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.5);text-transform:uppercase">Бонус</div>
-            <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;font-variant-numeric:tabular-nums">0&nbsp;₽</div>
-          </div>
-        </div>
-        <div class="contact reveal">
-          <div class="ci">
-            <div class="l">Менеджер</div>
-            <div class="v">Семён Панфилов</div>
-          </div>
-          <div class="ci">
-            <div class="l">Телефон</div>
-            <div class="v">+7 985 219 4604</div>
-          </div>
-          <div class="ci">
-            <div class="l">Telegram</div>
-            <div class="v">@pm_neatstudio</div>
-          </div>
-          <div class="ci">
-            <div class="l">Почта</div>
-            <div class="v">s.panfilov@neat-studio.ru</div>
-          </div>
-          <div class="ci">
-            <div class="l">Сайт</div>
-            <div class="v">neat-studio.ru</div>
-          </div>
-        </div>
+        <a class="audit-link reveal" href="https://disk.yandex.com/i/wm5Tx5uzHsDgbg" target="_blank" rel="noopener"><div><h4>Полный аудит · DOCX</h4><p>Недостатки сайта, SEO, UX, формы, каталог</p></div><div class="go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></a>
+        <a class="audit-link reveal" href="https://disk.yandex.com/i/P_chxBwuAGBVvA" target="_blank" rel="noopener" style="margin-top:10px!important"><div><h4>Техническое задание · DOCX</h4><p>Структура, функционал, интеграции, приемка</p></div><div class="go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></a>
+        <a class="audit-link reveal" href="https://disk.yandex.com/i/KzFx_fuyPwXh2Q" target="_blank" rel="noopener" style="margin-top:10px!important"><div><h4>Конкурентный анализ · DOCX</h4><p>Hlebprom, Черемушки, Metropolis, Benje, Marzipani</p></div><div class="go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></a>
+        <a class="audit-link reveal" href="https://disk.yandex.com/i/Bofi1KtgEJgFqw" target="_blank" rel="noopener" style="margin-top:10px!important"><div><h4>Аналитика Директ · DOCX</h4><p>Кампании, кластеры, минус-слова, цели</p></div><div class="go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></a>
       </div>
     </section>
 
 <footer>
       <div class="container frow">
-        <div
-          style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap"
-        >
-          <img
-            src="media/logo/logo_neat.png"
-            alt="Neat Studio"
-            style="height: 20px; width: auto; opacity: 0.55"
-          />
-          <span style="color: var(--line); font-size: 18px">·</span>
-          <span>КП подготовлено для КФ «Фантэль» · © 2026</span>
-        </div>
-        <div
-          style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap"
-        >
-          <span style="font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.45); letter-spacing: -0.01em">КФ «Фантэль»</span>
-          <span>Версия 1.0 · Действительно 30 дней</span>
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+          <img src="media/logo/logo_neat.png" alt="Neat Studio" style="height:20px;width:auto;opacity:.55" />
+          <span style="color:var(--line);font-size:18px">·</span>
+          <span>Neat Studio · Fantel proposal · © 2026</span>
         </div>
       </div>
     </footer>
 
 <script>
-          gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 gsap.utils.toArray(".reveal").forEach((el) => {
-            if (el.closest(".hero")) return;
-            gsap.fromTo(
-              el,
-              { opacity: 0, y: 40 },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: "power3.out",
-                scrollTrigger: { trigger: el, start: "top 85%" },
-              },
-            );
-          });
+  if (el.closest(".hero")) return;
+  gsap.fromTo(
+    el,
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: { trigger: el, start: "top 85%" },
+    },
+  );
+});
 
 document.querySelectorAll("[data-parallax]").forEach((el) => {
-            const speed = parseFloat(el.dataset.parallax);
-            gsap.to(el, {
-              yPercent: speed * 100,
-              ease: "none",
-              scrollTrigger: {
-                trigger: document.body,
-                start: "top top",
-                end: "bottom top",
-                scrub: true,
-              },
-            });
-          });
+  const speed = parseFloat(el.dataset.parallax);
+  gsap.to(el, {
+    yPercent: speed * 100,
+    ease: "none",
+    scrollTrigger: {
+      trigger: document.body,
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+});
 
 (() => {
-            const total = document.querySelectorAll(".aslide-img").length;
-            let current = 0;
-            let animating = false;
+  const total = document.querySelectorAll(".aslide-img").length;
+  if (!total) return;
+  let current = 0;
+  let animating = false;
 
-function goTo(n, dir) {
-              if (animating) return;
-              const prev = current;
-              current = (n + total) % total;
-              if (prev === current) return;
-              animating = true;
+  function goTo(n, dir) {
+    if (animating) return;
+    const prev = current;
+    current = (n + total) % total;
+    if (prev === current) return;
+    animating = true;
 
-const allImgs = document.querySelectorAll(".aslide-img");
-              const allFacts = document.querySelectorAll(".aslide-fact");
-              const allDots = document.querySelectorAll(".an-dot");
+    const allImgs = document.querySelectorAll(".aslide-img");
+    const allFacts = document.querySelectorAll(".aslide-fact");
+    const allDots = document.querySelectorAll(".an-dot");
 
-gsap.to(allImgs[prev], {
-                x: dir > 0 ? -50 : 50,
-                opacity: 0,
-                duration: 0.38,
-                ease: "power2.in",
-                onComplete: () => {
-                  allImgs[prev].classList.remove("active");
-                  gsap.set(allImgs[prev], { x: 0, opacity: 0 });
-                },
-              });
-              gsap.fromTo(
-                allImgs[current],
-                { x: dir > 0 ? 50 : -50, opacity: 0 },
-                {
-                  x: 0,
-                  opacity: 1,
-                  duration: 0.52,
-                  ease: "power3.out",
-                  onStart: () => {
-                    allImgs[current].classList.add("active");
-                  },
-                  onComplete: () => {
-                    animating = false;
-                  },
-                },
-              );
+    gsap.to(allImgs[prev], {
+      x: dir > 0 ? -50 : 50,
+      opacity: 0,
+      duration: 0.38,
+      ease: "power2.in",
+      onComplete: () => {
+        allImgs[prev].classList.remove("active");
+        gsap.set(allImgs[prev], { x: 0, opacity: 0 });
+      },
+    });
+    gsap.fromTo(
+      allImgs[current],
+      { x: dir > 0 ? 50 : -50, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.52,
+        ease: "power3.out",
+        onStart: () => {
+          allImgs[current].classList.add("active");
+        },
+        onComplete: () => {
+          animating = false;
+        },
+      },
+    );
 
-const pins = allImgs[current].querySelectorAll(".issue-pin");
-              gsap.fromTo(
-                pins,
-                { opacity: 0, scale: 0.6 },
-                {
-                  opacity: 1,
-                  scale: 1,
-                  duration: 0.45,
-                  stagger: 0.1,
-                  delay: 0.3,
-                  ease: "back.out(2)",
-                },
-              );
+    const pins = allImgs[current].querySelectorAll(".issue-pin");
+    gsap.fromTo(
+      pins,
+      { opacity: 0, scale: 0.6 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.45,
+        stagger: 0.1,
+        delay: 0.3,
+        ease: "back.out(2)",
+      },
+    );
 
-gsap.to(allFacts[prev], {
-                opacity: 0,
-                y: -10,
-                duration: 0.28,
-                ease: "power2.in",
-                onComplete: () => {
-                  allFacts[prev].classList.remove("active");
-                  gsap.set(allFacts[prev], { opacity: 0, y: 0 });
-                },
-              });
-              gsap.fromTo(
-                allFacts[current],
-                { opacity: 0, y: 12 },
-                {
-                  opacity: 1,
-                  y: 0,
-                  duration: 0.46,
-                  delay: 0.14,
-                  ease: "power3.out",
-                  onStart: () => {
-                    allFacts[current].classList.add("active");
-                  },
-                },
-              );
+    gsap.to(allFacts[prev], {
+      opacity: 0,
+      y: -10,
+      duration: 0.28,
+      ease: "power2.in",
+      onComplete: () => {
+        allFacts[prev].classList.remove("active");
+        gsap.set(allFacts[prev], { opacity: 0, y: 0 });
+      },
+    });
+    gsap.fromTo(
+      allFacts[current],
+      { opacity: 0, y: 12 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.46,
+        delay: 0.14,
+        ease: "power3.out",
+        onStart: () => {
+          allFacts[current].classList.add("active");
+        },
+        onComplete: () => {
+          gsap.set(allFacts[current], { y: 0, clearProps: "transform" });
+        },
+      },
+    );
 
-allDots.forEach((d, i) =>
-                d.classList.toggle("active", i === current),
-              );
-            }
+    allDots.forEach((d, i) => d.classList.toggle("active", i === current));
+  }
 
-document
-              .getElementById("auditNext")
-              .addEventListener("click", () => goTo(current + 1, 1));
-            document
-              .getElementById("auditPrev")
-              .addEventListener("click", () => goTo(current - 1, -1));
-            document.querySelectorAll(".an-dot").forEach((d) => {
-              d.addEventListener("click", () => {
-                const n = +d.dataset.n;
-                goTo(n, n > current ? 1 : -1);
-              });
-            });
+  document.getElementById("auditNext")?.addEventListener("click", () => goTo(current + 1, 1));
+  document.getElementById("auditPrev")?.addEventListener("click", () => goTo(current - 1, -1));
+  document.querySelectorAll(".an-dot").forEach((d) => {
+    d.addEventListener("click", () => {
+      const n = +d.dataset.n;
+      goTo(n, n > current ? 1 : -1);
+    });
+  });
 
-ScrollTrigger.create({
-              trigger: "#auditSlider",
-              start: "top 75%",
-              onEnter: () => {
-                gsap.fromTo(
-                  "#auditMockPanel",
-                  { clipPath: "inset(0 100% 0 0)" },
-                  {
-                    clipPath: "inset(0 0% 0 0)",
-                    duration: 1.1,
-                    ease: "power3.inOut",
-                  },
-                );
-                gsap.fromTo(
-                  ".audit-facts-panel",
-                  { opacity: 0, x: 30 },
-                  {
-                    opacity: 1,
-                    x: 0,
-                    duration: 0.8,
-                    delay: 0.25,
-                    ease: "power3.out",
-                  },
-                );
-                const pins = document.querySelectorAll(
-                  ".aslide-img.active .issue-pin",
-                );
-                gsap.fromTo(
-                  pins,
-                  { opacity: 0, scale: 0.6 },
-                  {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.45,
-                    stagger: 0.12,
-                    delay: 0.85,
-                    ease: "back.out(2)",
-                  },
-                );
-              },
-            });
-          })();
+  ScrollTrigger.create({
+    trigger: "#auditSlider",
+    start: "top 75%",
+    onEnter: () => {
+      gsap.fromTo(
+        "#auditMockPanel",
+        { clipPath: "inset(0 100% 0 0)" },
+        { clipPath: "inset(0 0% 0 0)", duration: 1.1, ease: "power3.inOut" },
+      );
+      gsap.fromTo(
+        ".audit-facts-panel",
+        { opacity: 0, x: 30 },
+        { opacity: 1, x: 0, duration: 0.8, delay: 0.25, ease: "power3.out" },
+      );
+      const pins = document.querySelectorAll(".aslide-img.active .issue-pin");
+      gsap.fromTo(
+        pins,
+        { opacity: 0, scale: 0.6 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.45,
+          stagger: 0.12,
+          delay: 0.85,
+          ease: "back.out(2)",
+        },
+      );
+    },
+  });
+})();
 
 ScrollTrigger.create({
-            trigger: ".bento-grid",
-            start: "top 78%",
-            onEnter: () => {
-              gsap.fromTo(
-                ".bento-card",
-                { opacity: 0, y: 36, scale: 0.96 },
-                {
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  duration: 0.8,
-                  stagger: { each: 0.07, from: "start" },
-                  ease: "power3.out",
-                  overwrite: true,
-                },
-              );
-            },
-          });
+  trigger: ".cmp-table",
+  start: "top 75%",
+  onEnter: () => {
+    gsap.fromTo(
+      ".cmp-table tbody tr",
+      { opacity: 0, x: -20 },
+      {
+        opacity: 1,
+        x: 0,
+        stagger: 0.05,
+        duration: 0.5,
+        ease: "power2.out",
+      },
+    );
+  },
+});
 
-ScrollTrigger.create({
-            trigger: ".tiers",
-            start: "top 80%",
-            onEnter: () => {
-              gsap.fromTo(
-                ".tier",
-                { y: 60, opacity: 0 },
-                {
-                  y: 0,
-                  opacity: 1,
-                  duration: 0.9,
-                  stagger: 0.12,
-                  ease: "power3.out",
-                  overwrite: true,
-                },
-              );
-            },
-          });
-
-ScrollTrigger.create({
-            trigger: ".cmp-table",
-            start: "top 75%",
-            onEnter: () => {
-              gsap.fromTo(
-                ".cmp-table tbody tr",
-                { opacity: 0, x: -20 },
-                {
-                  opacity: 1,
-                  x: 0,
-                  stagger: 0.05,
-                  duration: 0.5,
-                  ease: "power2.out",
-                },
-              );
-            },
-          });
-
-ScrollTrigger.create({
-            trigger: ".road-track",
-            start: "top 80%",
-            end: "bottom 70%",
-            scrub: true,
-            onUpdate: (self) => {
-              gsap.set("#roadLine", { scaleX: self.progress });
-            },
-          });
-          gsap.utils.toArray(".road-step").forEach((s, i) => {
-            gsap.fromTo(
-              s,
-              { opacity: 0, y: 24 },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                delay: i * 0.09,
-                ease: "power3.out",
-                scrollTrigger: { trigger: ".road-track", start: "top 80%" },
-              },
-            );
-          });
-
-gsap.to(".bg-ring", {
-            rotation: 360,
-            duration: 60,
-            repeat: -1,
-            ease: "none",
-          });
-
+const queries = [
+  ["производитель тортов оптом", 2480, 52],
+  ["бисквитные торты оптом", 1210, 24],
+  ["торты длительного хранения оптом", 790, 14],
+  ["производитель пирожных оптом", 1485, 31],
+  ["десерты для HoReCa оптом", 615, 11],
+  ["бисквитные торты длительного хранения", 3520, 81],
+  ["замороженные торты оптом", 905, 19],
+  ["торты для кафе оптом", 2210, 58],
+  ["поставщик тортов для магазинов", 460, 12],
+  ["торт прага оптом от производителя", 720, 18],
+  ["поставщик пирожных для кофеен", 350, 9],
+  ["кондитерские изделия оптом Челябинск", 1095, 22],
+  ["производитель пирожных Челябинск", 245, 118],
+  ["торты Челябинск оптом", 175, 142],
+  ["дистрибуция кондитерских изделий", 410, 12],
+  ["фабрика тортов Россия", 1780, 36],
+  ["торты оптом", 12480, 152],
+  ["купить торты оптом", 5215, 86],
+  ["кондитерская фабрика", 28430, 432],
+  ["производитель кондитерских изделий", 3820, 45],
+  ["поставщик тортов", 2110, 28],
+  ["торты от производителя", 6720, 78],
+  ["торт медовик оптом от производителя", 1850, 22],
+  ["торт наполеон оптом", 1340, 28],
+  ["десерты оптом", 4380, 65],
+  ["мини торты оптом", 620, 14],
+  ["торты для ресторана", 880, 18],
+  ["кондитерская продукция оптом", 3210, 52],
+  ["торты в магазин", 2790, 38],
+  ["торт прага оптом", 575, 12],
+];
+const fmt = new Intl.NumberFormat("ru-RU");
+const semanticBody = document.getElementById("semantic-body");
+if (semanticBody) {
+  semanticBody.innerHTML = queries.map(([query, rf, chel], index) => {
+    const leads = rf * 0.03 * 0.02;
+    return `<div style="display:grid;grid-template-columns:50px 1fr 140px 140px 140px;padding:14px 24px;border-bottom:1px solid var(--line);font-size:14px">
+      <div style="color:var(--ink-soft)">${String(index + 1).padStart(2, "0")}</div>
+      <div style="color:var(--ink);font-weight:600">${query}</div>
+      <div style="text-align:right;color:var(--ink);font-variant-numeric:tabular-nums">${fmt.format(rf)}</div>
+      <div style="text-align:right;color:var(--ink-soft);font-variant-numeric:tabular-nums">${fmt.format(chel)}</div>
+      <div style="text-align:right;color:var(--blue-2);font-weight:700;font-variant-numeric:tabular-nums">~${leads.toFixed(1).replace(".", ",")}</div>
+    </div>`;
+  }).join("");
+}
 </script>
 </html>
