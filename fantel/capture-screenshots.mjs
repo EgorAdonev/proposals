@@ -1,7 +1,9 @@
 import { chromium } from "playwright";
+import { fileURLToPath } from "node:url";
+import { join } from "node:path";
 
 const base = "http://localhost:8080";
-const outDir = new URL("./media/future-website/", import.meta.url);
+const outDir = fileURLToPath(new URL("./media/future-website/", import.meta.url));
 
 const shots = [
   ["/", "desktop-01-hero.png", 0],
@@ -25,7 +27,7 @@ for (const [route, fileName, scrollY] of shots) {
   await page.goto(`${base}${route}`, { waitUntil: "networkidle" });
   await page.evaluate((y) => window.scrollTo(0, y), scrollY);
   await page.waitForTimeout(350);
-  await page.screenshot({ path: new URL(fileName, outDir), fullPage: false });
+  await page.screenshot({ path: join(outDir, fileName), fullPage: false });
   console.log(`${fileName} ${route} scroll=${scrollY}`);
 }
 
